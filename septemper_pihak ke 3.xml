@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mtw_export_macros>
+    <macro inum="0" onum="5" aflag="0" flags="2" name="" uid="5438125-533" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan mengisi form berikut untuk mengclaim EVENT SCATTER MAHJONG WAYS 1 &amp; 2 ya bosku<BR>user id :<BR><SPAN style="FONT-SIZE: 11pt; TEXT-DECORATION: none; FONT-FAMILY: 'Google Sans Text'; FONT-VARIANT: normal; VERTICAL-ALIGN: baseline; WHITE-SPACE: pre-wrap; FONT-WEIGHT: 400; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: transparent">Kode Tiket / Periode permainan :</SPAN><BR>Screenshot scatter yang didapatkan :<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="1" onum="1" aflag="0" flags="2" name="" uid="724881718-407" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Sekiranya informasi di atas sudah sangat jelas dan mudah untuk dapat di mengerti ya bosku.<BR>Jika anda masih belum mengerti, Mohon di perhatikan kembali informasi yang kami berikan sebelum nya secara berulang hingga anda mengerti ya bosku. Mohon maaf apabila kami tidak merespon pertanyaan anda yang berulang ulang ya bosku. Sekian &amp; Terima kasih.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="17" trigtype="0">
+            <tscut><![CDATA[baca/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="2" onum="3" aflag="0" flags="2" name="" uid="2376781-525" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Setelah kami cek disini untuk akun anda terkunci pada saat melakukan Withdraw namun tidak dapat kami proseskan dikarenakan Berbeda Nama rekening ya bosku.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[bedanama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="3" onum="2" aflag="0" flags="2" name="" uid="4516296-531" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan di isi form depositnya ya bos ku, jika sudah mengisi form deposit silahkan anda konfirmasi kepada kami ya bosku.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4192" hklp="-2142109695" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="4" onum="0" aflag="0" flags="2" name="" uid="8705406-409" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk claim dana deposit yang sudah anda kirimkan maksimal adalah dalam waktu 7x24 jam, jika melebihi batas waktu yang telah ditentukan maka dana deposit anda akan di anggap hangus ya bosku kami sarankan anda mengirimkan dana kekurangnya sebelum melewati waktu 7x24 jam agar perihal tersebut dapat kami bantu ya bosku.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[dc/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="5" onum="4" aflag="0" flags="2" name="" uid="17344421-547" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu informasikan untuk Bonus apa yang anda maksud ya bosku?<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[dibantu/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="6" onum="6" aflag="0" flags="2" name="" uid="15618515-544" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Setelah kami cek Untuk akun anda terkunci pada saat melakukan withdraw namun tidak dapat kami proseskan dikarenakan rekening XXX yang terdaftar pada akun anda LIMIT ya bosku, untuk perihal tersebut jika anda masih ingin menggunakan rekening yang terdaftar,silahkan ditunggu hingga pergantian bulan ya bosku , agar akun ewallet anda kembali normal bosku<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[limit/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="7" onum="7" aflag="0" flags="2" name="" uid="129790328-408" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan di coba loginkan akun anda menggunakan user id dan password yang biasa anda gunakan untuk login akun anda bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[loginkan/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="8" onum="23" aflag="0" flags="2" name="" uid="23010968-674" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dana Withdraw anda akan segera kami proseskan ketika BANK sudah normal kembali ya, mohon maaf atas ketidaknyamanannya ya bosku.<BR><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[malwd/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="9" onum="8" aflag="0" flags="2" name="" uid="15256750-542" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu dengan bukti lengkap yang terdapat kode RRN QRIS BCA nya agar dapat kami cek lebih lanjut ya bosku.<BR>Anda dapat cek Kode RRN QRIS nya pada pilihan QRIS Menu &gt; Inbox &gt; Klik transaksi QR yang Anda lakukan sebelumnya<BR>berikut contoh nya bosku : <A href="https://sleekshot.app/v/c7plpIqdngFe">https://sleekshot.app/v/c7plpIqdngFe</A></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[rrnbca]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="10" onum="9" aflag="0" flags="2" name="" uid="15341281-543" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu dengan bukti lengkap yang terdapat kode RRN QRIS nya agar dapat kami cek lebih lanjut ya bosku<BR>- silahkan anda klik Detail Tranksaksi : <A href="https://sleekshot.app/v/MiIkYLsYjwcu">https://sleekshot.app/v/MiIkYLsYjwcu</A><BR>- Berikut Contoh kode Rrn QRIS DANA : <A href="https://sleekshot.app/v/WtyUcsKlnUEq">https://sleekshot.app/v/WtyUcsKlnUEq</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[rrndana]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="11" onum="10" aflag="0" flags="2" name="" uid="16240578-545" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu dengan bukti lengkap (Detail Tranksaksi) yang terdapat kode RRN QRIS GOPAY nya agar dapat kami cek lebih lanjut ya bosku<BR>berikut contoh nya : <A href="https://sleekshot.app/v/ErbNtsT6qFsH">https://sleekshot.app/v/ErbNtsT6qFsH</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[rrngopay]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="12" onum="11" aflag="0" flags="2" name="" uid="16528437-546" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu dengan bukti lengkap (Detail Tranksaksi) yang terdapat kode RRN QRIS OVO nya agar dapat kami cek lebih lanjut ya bosku<BR>berikut contoh nya : <A href="https://sleekshot.app/v/PiTD6kVJeuhJ">https://sleekshot.app/v/PiTD6kVJeuhJ</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[rrnovo]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="13" onum="12" aflag="0" flags="2" name="" uid="725005328-408" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami cek untuk nomor rekening yang terdaftar pada akun anda saat ini masih valid ya bosku, untuk perihal tersebut kami tidak dapat mengganti nomor rekening anda jika rekening yang terdaftar pada akun anda masih valid ya bosku, solusi dari kendala anda silahkan anda daftarkan akun baru untuk data rekening baru anda bosku<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[saranrek/]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="14" onum="13" aflag="0" flags="2" name="" uid="14455343-536" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun BCA anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/MoEoPq9QWaSX">https://sleekshot.app/v/MoEoPq9QWaSX</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssbca]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="15" onum="14" aflag="0" flags="2" name="" uid="14486296-539" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun BNI anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/c7rHTfmS3BlP">https://sleekshot.app/v/c7rHTfmS3BlP</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssbni]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="16" onum="15" aflag="0" flags="2" name="" uid="14468609-537" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun BRI anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/jlB7y9eE9psa">https://sleekshot.app/v/jlB7y9eE9psa</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssbri]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="17" onum="16" aflag="0" flags="2" name="" uid="15000703-541" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun CIMB anda bosku<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[sscimb]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="18" onum="17" aflag="0" flags="2" name="" uid="2991687-526" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun DANA anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/0IEXRQPUliXq">https://sleekshot.app/v/0IEXRQPUliXq</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssdana]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="19" onum="18" aflag="0" flags="2" name="" uid="14444109-535" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun GOPAY anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/Ph9rsRBEMorF">https://sleekshot.app/v/Ph9rsRBEMorF</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssgopay]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="20" onum="19" aflag="0" flags="2" name="" uid="14791515-540" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun LINKAJA anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/5yVh7A1gq9WQ">https://sleekshot.app/v/5yVh7A1gq9WQ</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[sslinkaja]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="21" onum="20" aflag="0" flags="2" name="" uid="14477656-538" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun MANDIRI anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/OfaXDAV4nxLw">https://sleekshot.app/v/OfaXDAV4nxLw</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssmandiri]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="22" onum="21" aflag="0" flags="2" name="" uid="14428203-534" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bisa di bantu kirimkan foto/screnshot tampilan Profile akun OVO anda bosku , berikut contoh nya : <A href="https://sleekshot.app/v/NzPSchLazXcY">https://sleekshot.app/v/NzPSchLazXcY</A><BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[ssovo]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="23" onum="22" aflag="0" flags="2" name="" uid="22743171-673" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku, untuk saat ini Withdraw bank SEABANK sedang mengalami gangguan, untuk withdraw anda akan kami proses apabila bank telah normal kembali ya bossku, Terima kasih.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[wdseabank]]></tscut>
+        </trigger>
+    </macro>
+</mtw_export_macros>
