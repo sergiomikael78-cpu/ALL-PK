@@ -15,6 +15,7 @@
     templates: [],
     filteredTemplates: [],
     activeCategory: 'all',
+    activeTab: 'pk', // 'pk' | 'keep'
     searchQuery: '',
     sortBy: 'default',
     totalCopiedCount: 0,
@@ -32,6 +33,16 @@
 
   // DOM Elements Cache
   const elements = {
+    // Top Tabs Navigation
+    tabBtnPk: document.getElementById('tab-btn-pk'),
+    tabBtnKeep: document.getElementById('tab-btn-keep'),
+    tabPkCount: document.getElementById('tab-pk-count'),
+    tabKeepCount: document.getElementById('tab-keep-count'),
+    pkHeaderControls: document.getElementById('pk-header-controls'),
+    keepHeaderControls: document.getElementById('keep-header-controls'),
+    viewPk: document.getElementById('view-pk'),
+    viewKeep: document.getElementById('view-keep'),
+
     // Header & Stats
     headerTotalCount: document.getElementById('header-total-count'),
     btnStats: document.getElementById('btn-stats'),
@@ -212,6 +223,7 @@
   }
 
   let dbRefListener = null;
+  let dbKeepRefListener = null;
 
   function initCloudSync() {
     const config = window.getFirebaseConfig ? window.getFirebaseConfig() : null;
@@ -254,12 +266,15 @@
       if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'inline-flex';
       if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'inline-flex';
 
-      // Detach previous listener if exists
+      // Detach previous listeners if exist
       if (dbRefListener) {
         db.ref('pk_templates').off('value', dbRefListener);
       }
+      if (dbKeepRefListener) {
+        db.ref('keep_notes').off('value', dbKeepRefListener);
+      }
 
-      // Attach Realtime Listener
+      // Attach Realtime Listener for PK Templates
       const tplRef = db.ref('pk_templates');
       dbRefListener = (snapshot) => {
         const val = snapshot.val();
@@ -279,6 +294,32 @@
         setSyncStatus('local', 'Koneksi Error');
         showToast('Koneksi Cloud Terputus', 'Periksa izin Rules di Firebase Console', 'error');
       });
+
+      // Attach Realtime Listener for KEEP Notes
+      const keepRef = db.ref('keep_notes');
+      dbKeepRefListener = (snapshot) => {
+        const val = snapshot.val();
+        if (val && Array.isArray(val) && val.length > 0) {
+          if (window.KeepManager && typeof window.KeepManager.setNotes === 'function') {
+            window.KeepManager.setNotes(val, false);
+          }
+        } else if (!val) {
+          const initialKeep = (window.DEFAULT_KEEP_NOTES && Array.isArray(window.DEFAULT_KEEP_NOTES)) ? window.DEFAULT_KEEP_NOTES : [];
+          if (initialKeep.length > 0) {
+            db.ref('keep_notes').set(initialKeep);
+          }
+        }
+      };
+      keepRef.on('value', dbKeepRefListener);
+
+      // Expose to window.FirebaseSync so KeepManager can push updates to cloud
+      window.FirebaseSync = {
+        syncKeepNotes: (notes) => {
+          if (state.cloudSync.db) {
+            state.cloudSync.db.ref('keep_notes').set(notes);
+          }
+        }
+      };
 
     } catch (err) {
       console.error('Inisialisasi Firebase Cloud Sync gagal:', err);
@@ -330,6 +371,7 @@
     });
 
     if (elements.headerTotalCount) elements.headerTotalCount.textContent = total;
+    if (elements.tabPkCount) elements.tabPkCount.textContent = total;
     if (elements.countAll) elements.countAll.textContent = total;
     if (elements.countPinned) elements.countPinned.textContent = pinned;
     if (elements.countEvent) elements.countEvent.textContent = event;
@@ -820,16 +862,24 @@
   // Settings, Export & Import
   // =========================================================================
   function exportBackup() {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state.templates, null, 2));
+    const keepNotes = (window.KeepManager && typeof window.KeepManager.getNotes === 'function') ? window.KeepManager.getNotes() : [];
+    const payload = {
+      version: 2,
+      exportDate: new Date().toISOString(),
+      pk_templates: state.templates,
+      keep_notes: keepNotes
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(payload, null, 2));
     const now = new Date().toISOString().slice(0, 10);
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `PK_Vault_Backup_${now}.json`);
+    downloadAnchor.setAttribute("download", `PK_Matrix_Keep_Backup_${now}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
 
-    showToast('Backup Diunduh! ✓', 'File JSON tersimpan di perangkat Anda.');
+    showToast('Backup Diunduh! ✓', `${state.templates.length} template & ${keepNotes.length} catatan KEEP tersimpan.`);
   }
 
   function importBackup(file) {
@@ -839,15 +889,34 @@
     reader.onload = function (e) {
       try {
         const importedData = JSON.parse(e.target.result);
+        let pkCount = 0;
+        let keepCount = 0;
+
         if (Array.isArray(importedData)) {
+          // Legacy format (array of templates)
           state.templates = importedData;
           saveTemplates();
           applyFilters();
-          elements.modalSettings.style.display = 'none';
-          showToast('Data Berhasil Dipulihkan! ✓', `${importedData.length} template dimuat.`);
+          pkCount = importedData.length;
+        } else if (importedData && typeof importedData === 'object') {
+          // Version 2 format (object with pk_templates and keep_notes)
+          if (Array.isArray(importedData.pk_templates)) {
+            state.templates = importedData.pk_templates;
+            saveTemplates();
+            applyFilters();
+            pkCount = importedData.pk_templates.length;
+          }
+          if (Array.isArray(importedData.keep_notes) && window.KeepManager) {
+            window.KeepManager.setNotes(importedData.keep_notes, true);
+            keepCount = importedData.keep_notes.length;
+          }
         } else {
-          alert('Format file JSON tidak valid!');
+          alert('Format file JSON cadangan tidak dikenali!');
+          return;
         }
+
+        elements.modalSettings.style.display = 'none';
+        showToast('Data Berhasil Dipulihkan! ✓', `${pkCount} template PK & ${keepCount} catatan KEEP dimuat.`);
       } catch (err) {
         alert('Gagal membaca file JSON: ' + err.message);
       }
@@ -888,9 +957,54 @@
   }
 
   // =========================================================================
+  // Tab Switching (PK Matrix vs KEEP Vault)
+  // =========================================================================
+  function switchTab(tabName) {
+    state.activeTab = tabName;
+
+    if (tabName === 'pk') {
+      if (elements.tabBtnPk) elements.tabBtnPk.classList.add('active');
+      if (elements.tabBtnKeep) elements.tabBtnKeep.classList.remove('active');
+      if (elements.pkHeaderControls) elements.pkHeaderControls.style.display = 'block';
+      if (elements.keepHeaderControls) elements.keepHeaderControls.style.display = 'none';
+      if (elements.viewPk) elements.viewPk.style.display = 'block';
+      if (elements.viewKeep) elements.viewKeep.style.display = 'none';
+      if (elements.btnAddHeader) elements.btnAddHeader.querySelector('span').textContent = 'Tambah';
+      if (elements.btnFabAdd) elements.btnFabAdd.title = 'Tambah Template Baru';
+    } else if (tabName === 'keep') {
+      if (elements.tabBtnKeep) elements.tabBtnKeep.classList.add('active');
+      if (elements.tabBtnPk) elements.tabBtnPk.classList.remove('active');
+      if (elements.pkHeaderControls) elements.pkHeaderControls.style.display = 'none';
+      if (elements.keepHeaderControls) elements.keepHeaderControls.style.display = 'block';
+      if (elements.viewPk) elements.viewPk.style.display = 'none';
+      if (elements.viewKeep) elements.viewKeep.style.display = 'block';
+      if (elements.btnAddHeader) elements.btnAddHeader.querySelector('span').textContent = '+ Catatan';
+      if (elements.btnFabAdd) elements.btnFabAdd.title = 'Buat Catatan Baru';
+      if (window.KeepManager && typeof window.KeepManager.refresh === 'function') {
+        window.KeepManager.refresh();
+      }
+    }
+  }
+
+  // =========================================================================
   // Event Listeners Setup
   // =========================================================================
   function setupEvents() {
+    // Tab Switcher Events
+    if (elements.tabBtnPk) elements.tabBtnPk.addEventListener('click', () => switchTab('pk'));
+    if (elements.tabBtnKeep) elements.tabBtnKeep.addEventListener('click', () => switchTab('keep'));
+
+    // Keyboard Shortcuts (Alt+1 for PK, Alt+2 for KEEP)
+    window.addEventListener('keydown', (e) => {
+      if (e.altKey && e.key === '1') {
+        e.preventDefault();
+        switchTab('pk');
+      } else if (e.altKey && e.key === '2') {
+        e.preventDefault();
+        switchTab('keep');
+      }
+    });
+
     // Search Events
     let searchDebounce = null;
     elements.searchInput.addEventListener('input', (e) => {
@@ -979,9 +1093,19 @@
     elements.btnCloseVariable.addEventListener('click', () => elements.modalVariable.style.display = 'none');
     elements.btnCancelVariable.addEventListener('click', () => elements.modalVariable.style.display = 'none');
 
-    // Add / Edit Modal Events
-    elements.btnAddHeader.addEventListener('click', openAddModal);
-    elements.btnFabAdd.addEventListener('click', openAddModal);
+    // Add Action (Contextual for PK or KEEP)
+    const handleContextualAdd = () => {
+      if (state.activeTab === 'keep') {
+        if (window.KeepManager && typeof window.KeepManager.openAddModal === 'function') {
+          window.KeepManager.openAddModal();
+        }
+      } else {
+        openAddModal();
+      }
+    };
+
+    elements.btnAddHeader.addEventListener('click', handleContextualAdd);
+    elements.btnFabAdd.addEventListener('click', handleContextualAdd);
     elements.btnCloseModal.addEventListener('click', () => elements.modalTemplate.style.display = 'none');
     elements.btnCancelModal.addEventListener('click', () => elements.modalTemplate.style.display = 'none');
     elements.formTemplate.addEventListener('submit', handleSaveTemplate);
