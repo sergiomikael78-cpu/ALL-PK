@@ -43,7 +43,13 @@
           </div>
           <div class="brand-text">
             <h1 class="brand-title">PK MATRIX</h1>
-            <span class="brand-subtitle"><span id="header-total-count">397</span> TEMPLATE TERSEDIA</span>
+            <div class="brand-sub-row">
+              <span class="brand-subtitle"><span id="header-total-count">397</span> TEMPLATE</span>
+              <div class="sync-indicator" id="sync-indicator" title="Status Sinkronisasi">
+                <span class="sync-dot dot-local"></span>
+                <span class="sync-text" id="sync-status-text">Lokal</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -341,6 +347,79 @@
         </div>
 
         <div class="sheet-body settings-list">
+          <!-- Cloud Realtime Sync Card -->
+          <div class="settings-card cloud-sync-card">
+            <div class="settings-info">
+              <div class="cloud-header-status">
+                <h4>⚡ Sinkronisasi Cloud (Realtime Multi-Device)</h4>
+                <span class="badge-status-pill pill-offline" id="cloud-badge-status">Lokal (Offline)</span>
+              </div>
+              <p>Hubungkan ke Firebase Realtime Database agar tambah/edit di HP langsung muncul otomatis di Laptop seketika!</p>
+            </div>
+            
+            <div class="form-group cloud-input-group">
+              <label for="input-firebase-url" class="form-label">
+                <span>Firebase Database URL</span>
+                <span class="label-hint">Realtime DB URL</span>
+              </label>
+              <input 
+                type="url" 
+                id="input-firebase-url" 
+                class="form-input font-mono" 
+                placeholder="https://proyek-anda-default-rtdb.firebaseio.com"
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="form-group cloud-input-group">
+              <label for="input-firebase-apikey" class="form-label">
+                <span>API Key (Opsional jika Rules Public)</span>
+              </label>
+              <input 
+                type="text" 
+                id="input-firebase-apikey" 
+                class="form-input font-mono" 
+                placeholder="AIzaSy..."
+                autocomplete="off"
+              >
+            </div>
+            
+            <div class="cloud-actions-row">
+              <button type="button" id="btn-save-cloud" class="btn-primary-small">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>Hubungkan Cloud</span>
+              </button>
+              <button type="button" id="btn-sync-now" class="btn-secondary btn-sync-action" style="display:none;">
+                <span>🔄 Sinkron Sekarang</span>
+              </button>
+              <button type="button" id="btn-disconnect-cloud" class="btn-cancel btn-disconnect-action" style="display:none;">
+                <span>Putus Koneksi</span>
+              </button>
+            </div>
+
+            <div class="cloud-guide-box">
+              <details class="guide-details">
+                <summary class="guide-summary">📖 Panduan 2 Menit Membuat Firebase Database Gratis</summary>
+                <div class="guide-steps">
+                  <ol>
+                    <li>Buka <b>console.firebase.google.com</b> &amp; klik <b>"Add project"</b> (contoh nama: <code>pk-matrix-sync</code>).</li>
+                    <li>Di menu samping kiri, klik <b>Build</b> &gt; <b>Realtime Database</b> &gt; klik <b>Create Database</b>.</li>
+                    <li>Di tab <b>Rules</b>, ubah kodenya menjadi:<br>
+                      <pre class="code-snippet"><code>{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}</code></pre>
+                    </li>
+                    <li>Klik <b>Publish</b>, lalu salin URL database di bagian atas (contoh: <code>https://nama-proyek-default-rtdb.firebaseio.com/</code>).</li>
+                    <li>Tempelkan URL tersebut pada kolom di atas, lalu klik <b>Hubungkan Cloud</b>!</li>
+                  </ol>
+                </div>
+              </details>
+            </div>
+          </div>
+
           <div class="settings-card">
             <div class="settings-info">
               <h4>Ekspor Cadangan (Backup JSON)</h4>
@@ -451,6 +530,11 @@
     </div>
 
   </div>
+
+  <!-- Firebase SDK (Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>

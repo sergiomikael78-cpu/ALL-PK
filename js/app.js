@@ -21,7 +21,13 @@
     pageSize: 30,
     currentPage: 1,
     pendingDeleteId: null,
-    activeVariableTemplate: null
+    activeVariableTemplate: null,
+    cloudSync: {
+      isConfigured: false,
+      isConnected: false,
+      db: null,
+      status: 'local'
+    }
   };
 
   // DOM Elements Cache
@@ -31,6 +37,8 @@
     btnStats: document.getElementById('btn-stats'),
     btnSettings: document.getElementById('btn-settings'),
     btnAddHeader: document.getElementById('btn-add-header'),
+    syncIndicator: document.getElementById('sync-indicator'),
+    syncStatusText: document.getElementById('sync-status-text'),
 
     // Search
     searchInput: document.getElementById('search-input'),
@@ -92,6 +100,14 @@
     statCopied: document.getElementById('stat-copied'),
     statPinned: document.getElementById('stat-pinned'),
 
+    // Cloud Sync Elements
+    cloudBadgeStatus: document.getElementById('cloud-badge-status'),
+    inputFirebaseUrl: document.getElementById('input-firebase-url'),
+    inputFirebaseApiKey: document.getElementById('input-firebase-apikey'),
+    btnSaveCloud: document.getElementById('btn-save-cloud'),
+    btnSyncNow: document.getElementById('btn-sync-now'),
+    btnDisconnectCloud: document.getElementById('btn-disconnect-cloud'),
+
     // Delete Modal
     modalDelete: document.getElementById('modal-delete'),
     deletePreviewTrigger: document.getElementById('delete-preview-trigger'),
@@ -140,10 +156,13 @@
     applyFilters();
   }
 
-  function saveTemplates() {
+  function saveTemplates(pushToCloud = true) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.templates));
       updateCategoryCounts();
+      if (pushToCloud) {
+        syncChangeToCloud();
+      }
     } catch (e) {
       console.error('Gagal menyimpan ke localStorage:', e);
       showToast('Gagal menyimpan data!', 'Kapasitas penyimpanan browser penuh.', 'error');
@@ -158,6 +177,141 @@
     } catch (e) {
       console.error('Gagal menyimpan stats:', e);
     }
+  }
+
+  // =========================================================================
+  // Cloud Realtime Sync (Firebase)
+  // =========================================================================
+  function setSyncStatus(status, label) {
+    state.cloudSync.status = status;
+    const dot = elements.syncIndicator ? elements.syncIndicator.querySelector('.sync-dot') : null;
+    if (dot) {
+      dot.className = 'sync-dot';
+      if (status === 'online') dot.classList.add('dot-online');
+      else if (status === 'syncing') dot.classList.add('dot-syncing');
+      else dot.classList.add('dot-local');
+    }
+
+    if (elements.syncStatusText) {
+      elements.syncStatusText.textContent = label || (status === 'online' ? 'Cloud' : 'Lokal');
+    }
+
+    if (elements.cloudBadgeStatus) {
+      elements.cloudBadgeStatus.className = 'badge-status-pill';
+      if (status === 'online') {
+        elements.cloudBadgeStatus.classList.add('pill-online');
+        elements.cloudBadgeStatus.textContent = 'Cloud Terhubung (Realtime)';
+      } else if (status === 'syncing') {
+        elements.cloudBadgeStatus.classList.add('pill-syncing');
+        elements.cloudBadgeStatus.textContent = 'Menyinkronkan...';
+      } else {
+        elements.cloudBadgeStatus.classList.add('pill-offline');
+        elements.cloudBadgeStatus.textContent = 'Lokal (Offline)';
+      }
+    }
+  }
+
+  let dbRefListener = null;
+
+  function initCloudSync() {
+    const config = window.getFirebaseConfig ? window.getFirebaseConfig() : null;
+    if (!config || !config.databaseURL) {
+      setSyncStatus('local', 'Lokal');
+      if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'none';
+      if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'none';
+      return;
+    }
+
+    // Populate inputs if present
+    if (elements.inputFirebaseUrl) elements.inputFirebaseUrl.value = config.databaseURL || '';
+    if (elements.inputFirebaseApiKey && config.apiKey) elements.inputFirebaseApiKey.value = config.apiKey || '';
+
+    try {
+      if (typeof firebase === 'undefined') {
+        console.warn('Firebase SDK belum termuat atau diblokir.');
+        setSyncStatus('local', 'SDK Offline');
+        return;
+      }
+
+      setSyncStatus('syncing', 'Menghubungkan...');
+
+      // Re-init or get app
+      let app;
+      if (!firebase.apps.length) {
+        app = firebase.initializeApp({
+          apiKey: config.apiKey || 'pk-matrix-key',
+          databaseURL: config.databaseURL,
+          projectId: config.projectId || 'pk-matrix'
+        });
+      } else {
+        app = firebase.app();
+      }
+
+      const db = firebase.database(app);
+      state.cloudSync.db = db;
+      state.cloudSync.isConfigured = true;
+
+      if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'inline-flex';
+      if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'inline-flex';
+
+      // Detach previous listener if exists
+      if (dbRefListener) {
+        db.ref('pk_templates').off('value', dbRefListener);
+      }
+
+      // Attach Realtime Listener
+      const tplRef = db.ref('pk_templates');
+      dbRefListener = (snapshot) => {
+        const val = snapshot.val();
+        if (val && Array.isArray(val) && val.length > 0) {
+          state.templates = val;
+          saveTemplates(false); // local only, don't echo back
+          applyFilters();
+          setSyncStatus('online', 'Cloud Aktif');
+        } else if (!val) {
+          // Empty cloud, auto-seed with initial templates
+          seedCloudData();
+        }
+      };
+
+      tplRef.on('value', dbRefListener, (err) => {
+        console.error('Firebase Realtime Database Error:', err);
+        setSyncStatus('local', 'Koneksi Error');
+        showToast('Koneksi Cloud Terputus', 'Periksa izin Rules di Firebase Console', 'error');
+      });
+
+    } catch (err) {
+      console.error('Inisialisasi Firebase Cloud Sync gagal:', err);
+      setSyncStatus('local', 'Lokal');
+    }
+  }
+
+  function seedCloudData() {
+    if (!state.cloudSync.db) return;
+    setSyncStatus('syncing', 'Mengunggah Data...');
+    const dataToSeed = state.templates.length > 0 ? state.templates : (window.DEFAULT_TEMPLATES || []);
+    state.cloudSync.db.ref('pk_templates').set(dataToSeed)
+      .then(() => {
+        setSyncStatus('online', 'Cloud Aktif');
+        showToast('Cloud Berhasil Diinisialisasi! ✓', `${dataToSeed.length} template diunggah.`);
+      })
+      .catch((err) => {
+        console.error('Gagal upload ke cloud:', err);
+        setSyncStatus('local', 'Gagal Upload');
+      });
+  }
+
+  function syncChangeToCloud() {
+    if (!state.cloudSync.db) return;
+    setSyncStatus('syncing', 'Menyimpan...');
+    state.cloudSync.db.ref('pk_templates').set(state.templates)
+      .then(() => {
+        setSyncStatus('online', 'Cloud Aktif');
+      })
+      .catch(err => {
+        console.error('Gagal sync ke cloud:', err);
+        setSyncStatus('local', 'Gagal Sync');
+      });
   }
 
   // =========================================================================
@@ -859,6 +1013,65 @@
     });
     elements.btnResetOriginal.addEventListener('click', resetToOriginal);
 
+    // Cloud Sync Settings Events
+    if (elements.btnSaveCloud) {
+      elements.btnSaveCloud.addEventListener('click', () => {
+        const url = elements.inputFirebaseUrl.value.trim();
+        const apiKey = elements.inputFirebaseApiKey ? elements.inputFirebaseApiKey.value.trim() : '';
+
+        if (!url) {
+          alert('Harap masukkan URL Firebase Realtime Database Anda!\nContoh: https://proyek-anda-default-rtdb.firebaseio.com');
+          return;
+        }
+
+        // Clean up URL trailing slash if needed
+        const cleanUrl = url.replace(/\/+$/, '');
+        const config = {
+          databaseURL: cleanUrl,
+          apiKey: apiKey || 'pk-matrix-key'
+        };
+
+        try {
+          localStorage.setItem('PK_FIREBASE_CONFIG', JSON.stringify(config));
+          initCloudSync();
+          showToast('Menghubungkan ke Cloud...', cleanUrl);
+        } catch (e) {
+          alert('Gagal menyimpan konfigurasi cloud: ' + e.message);
+        }
+      });
+    }
+
+    if (elements.btnSyncNow) {
+      elements.btnSyncNow.addEventListener('click', () => {
+        if (!state.cloudSync.db) {
+          alert('Cloud belum terhubung!');
+          return;
+        }
+        syncChangeToCloud();
+        showToast('Sinkronisasi Dikirim! ✓', 'Data lokal diunggah ke cloud.');
+      });
+    }
+
+    if (elements.btnDisconnectCloud) {
+      elements.btnDisconnectCloud.addEventListener('click', () => {
+        const confirmDisc = confirm('Putus koneksi cloud? Aplikasi akan beralih ke penyimpanan lokal (LocalStorage).');
+        if (!confirmDisc) return;
+
+        localStorage.removeItem('PK_FIREBASE_CONFIG');
+        if (state.cloudSync.db && dbRefListener) {
+          state.cloudSync.db.ref('pk_templates').off('value', dbRefListener);
+        }
+        state.cloudSync.db = null;
+        state.cloudSync.isConfigured = false;
+        elements.inputFirebaseUrl.value = '';
+        if (elements.inputFirebaseApiKey) elements.inputFirebaseApiKey.value = '';
+        elements.btnSyncNow.style.display = 'none';
+        elements.btnDisconnectCloud.style.display = 'none';
+        setSyncStatus('local', 'Lokal');
+        showToast('Koneksi Cloud Diputus', 'Sekarang berjalan dalam mode lokal.');
+      });
+    }
+
     // Close Modals when clicking on backdrop
     [elements.modalTemplate, elements.modalVariable, elements.modalSettings, elements.modalDelete].forEach(modal => {
       modal.addEventListener('click', (e) => {
@@ -887,6 +1100,7 @@
   // =========================================================================
   document.addEventListener('DOMContentLoaded', () => {
     initData();
+    initCloudSync();
     setupEvents();
   });
 

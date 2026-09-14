@@ -146,6 +146,13 @@ body {
   line-height: 1.1;
 }
 
+.brand-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1px;
+}
+
 .brand-subtitle {
   display: block;
   font-size: 10px;
@@ -158,6 +165,56 @@ body {
 .brand-subtitle span {
   color: var(--cyber-cyan);
   font-weight: 700;
+}
+
+.sync-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #090e1c;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 1px 7px;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.sync-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.sync-dot.dot-online {
+  background-color: var(--cyber-emerald);
+  box-shadow: 0 0 6px var(--cyber-emerald);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.sync-dot.dot-syncing {
+  background-color: var(--cyber-cyan);
+  box-shadow: 0 0 6px var(--cyber-cyan);
+  animation: spinDot 0.8s infinite linear;
+}
+
+.sync-dot.dot-local {
+  background-color: var(--cyber-amber);
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes spinDot {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.6; }
 }
 
 .header-actions {
@@ -1082,6 +1139,90 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* Cloud Sync Card Specifics */
+.cloud-sync-card {
+  border-color: rgba(0, 242, 254, 0.25);
+  background: linear-gradient(180deg, #0e1628 0%, #0a0f1d 100%);
+}
+
+.cloud-header-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.badge-status-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.pill-online {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.pill-syncing {
+  background: rgba(0, 242, 254, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(0, 242, 254, 0.4);
+}
+
+.pill-offline {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.cloud-input-group {
+  margin-top: 4px;
+}
+
+.cloud-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.cloud-guide-box {
+  margin-top: 6px;
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 8px;
+}
+
+.guide-summary {
+  font-size: 12px;
+  color: var(--cyber-cyan);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.guide-steps {
+  margin-top: 8px;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.code-snippet {
+  background: #050810;
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin: 4px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #38bdf8;
 }
 
 .settings-info h4 {
