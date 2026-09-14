@@ -218,22 +218,107 @@
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
 }
 
-.quick-input-content {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: #f1f5f9;
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  line-height: 1.55;
-  outline: none;
-  resize: vertical;
-  min-height: 90px;
+/* Quick Note Modular Responses */
+.quick-responses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.quick-input-content::placeholder {
-  color: var(--text-muted);
+.quick-response-item {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.quick-response-item:focus-within {
+  border-color: rgba(0, 242, 254, 0.4);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.quick-response-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-response-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--cyber-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.btn-quick-delete-resp {
+  background: transparent;
+  border: none;
+  color: var(--cyber-rose);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.btn-quick-delete-resp:hover {
+  background: rgba(244, 63, 94, 0.2);
+}
+
+.quick-response-textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 8px 10px;
+  outline: none;
+  resize: vertical;
+  min-height: 56px;
+  transition: border-color 0.2s ease;
+}
+
+.quick-response-textarea:focus {
+  border-color: var(--cyber-amber);
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.btn-add-quick-resp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1.5px dashed rgba(245, 158, 11, 0.4);
+  color: var(--cyber-amber);
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.btn-add-quick-resp:hover {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: var(--cyber-amber);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+}
+
+.quick-input-content {
+  display: none;
 }
 
 /* Image preview in quick note */

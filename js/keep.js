@@ -58,11 +58,13 @@
     els.colorFilterBar = document.getElementById('keep-color-filter-bar');
     els.keepResultText = document.getElementById('keep-results-count-text');
 
-    // Quick Note Bar
+    // Quick Note Bar (Modular Response Creator)
     els.quickNoteCollapsed = document.getElementById('quick-note-collapsed');
     els.quickNoteExpanded = document.getElementById('quick-note-expanded');
     els.quickTitleInput = document.getElementById('quick-note-title');
     els.quickContentInput = document.getElementById('quick-note-content');
+    els.quickResponsesContainer = document.getElementById('quick-responses-container');
+    els.btnAddQuickResponse = document.getElementById('btn-add-quick-response');
     els.quickImageInput = document.getElementById('quick-image-file');
     els.quickImagePreview = document.getElementById('quick-image-preview');
     els.quickImagePreviewImg = document.getElementById('quick-image-preview-img');
@@ -471,6 +473,32 @@
       els.btnCloseQuickNote.addEventListener('click', collapseQuickNote);
     }
 
+    // Add Response block button in Quick Creator
+    if (els.btnAddQuickResponse) {
+      els.btnAddQuickResponse.addEventListener('click', () => addQuickResponseItem(''));
+    }
+
+    // Delete Response block delegation in Quick Creator
+    if (els.quickResponsesContainer) {
+      els.quickResponsesContainer.addEventListener('click', (e) => {
+        const btnDel = e.target.closest('[data-action="delete-quick-resp"]');
+        if (!btnDel) return;
+
+        const item = btnDel.closest('.quick-response-item');
+        if (!item) return;
+
+        const allItems = els.quickResponsesContainer.querySelectorAll('.quick-response-item');
+        if (allItems.length <= 1) {
+          const ta = item.querySelector('textarea');
+          if (ta) ta.value = '';
+          return;
+        }
+
+        item.remove();
+        reindexQuickResponses();
+      });
+    }
+
     // Pin toggle
     if (els.btnQuickPin) {
       els.btnQuickPin.addEventListener('click', () => {
@@ -529,6 +557,7 @@
         keepState.quickNoteImage = null;
         if (els.quickImageInput) els.quickImageInput.value = '';
         if (els.quickImagePreview) els.quickImagePreview.style.display = 'none';
+        if (els.quickImagePreviewImg) els.quickImagePreviewImg.src = '';
       });
     }
 
@@ -536,6 +565,43 @@
     if (els.btnSaveQuickNote) {
       els.btnSaveQuickNote.addEventListener('click', saveQuickNote);
     }
+  }
+
+  function addQuickResponseItem(initialText = '') {
+    if (!els.quickResponsesContainer) return;
+    const items = els.quickResponsesContainer.querySelectorAll('.quick-response-item');
+    const newIdx = items.length;
+
+    const div = document.createElement('div');
+    div.className = 'quick-response-item';
+    div.dataset.index = newIdx;
+    div.innerHTML = `
+      <div class="quick-response-item-header">
+        <span class="quick-response-badge">⚡ RESPON ${String(newIdx + 1).padStart(2, '0')}</span>
+        <button type="button" class="btn-quick-delete-resp" data-action="delete-quick-resp" title="Hapus respon ini">✕ Hapus</button>
+      </div>
+      <textarea class="quick-response-textarea" rows="2" placeholder="Tuliskan respon kalimat berikutnya...">${escapeHtml(initialText)}</textarea>
+    `;
+
+    els.quickResponsesContainer.appendChild(div);
+    reindexQuickResponses();
+
+    const ta = div.querySelector('textarea');
+    if (ta) ta.focus();
+  }
+
+  function reindexQuickResponses() {
+    if (!els.quickResponsesContainer) return;
+    const items = els.quickResponsesContainer.querySelectorAll('.quick-response-item');
+    items.forEach((item, idx) => {
+      item.dataset.index = idx;
+      const badge = item.querySelector('.quick-response-badge');
+      if (badge) badge.textContent = `⚡ RESPON ${String(idx + 1).padStart(2, '0')}`;
+      const delBtn = item.querySelector('.btn-quick-delete-resp');
+      if (delBtn) {
+        delBtn.style.display = items.length > 1 ? 'inline-block' : 'none';
+      }
+    });
   }
 
   function expandQuickNote() {
@@ -548,19 +614,33 @@
 
   function collapseQuickNote() {
     if (els.quickNoteCollapsed) els.quickNoteCollapsed.style.display = 'flex';
-    if (els.quickNoteExpanded) els.quickNoteExpanded.style.display = 'none';
+    if (els.quickNoteExpanded) {
+      els.quickNoteExpanded.style.display = 'none';
+    }
     resetQuickNoteForm();
   }
 
   function resetQuickNoteForm() {
     if (els.quickTitleInput) els.quickTitleInput.value = '';
-    if (els.quickContentInput) els.quickContentInput.value = '';
     if (els.quickCategorySelect) els.quickCategorySelect.value = 'Event';
     if (els.quickImageInput) els.quickImageInput.value = '';
     if (els.quickImagePreview) els.quickImagePreview.style.display = 'none';
+    if (els.quickImagePreviewImg) els.quickImagePreviewImg.src = '';
     keepState.quickNoteColor = 'default';
     keepState.quickNotePinned = false;
     keepState.quickNoteImage = null;
+
+    if (els.quickResponsesContainer) {
+      els.quickResponsesContainer.innerHTML = `
+        <div class="quick-response-item" data-index="0">
+          <div class="quick-response-item-header">
+            <span class="quick-response-badge">⚡ RESPON 01</span>
+            <button type="button" class="btn-quick-delete-resp" data-action="delete-quick-resp" title="Hapus respon ini" style="display: none;">✕ Hapus</button>
+          </div>
+          <textarea class="quick-response-textarea" rows="2" placeholder="Tuliskan kalimat atau jawaban respon pertama..."></textarea>
+        </div>
+      `;
+    }
 
     if (els.btnQuickPin) {
       els.btnQuickPin.classList.remove('pinned');
@@ -581,23 +661,28 @@
 
   function saveQuickNote() {
     const title = els.quickTitleInput ? els.quickTitleInput.value.trim() : '';
-    const content = els.quickContentInput ? els.quickContentInput.value.trim() : '';
 
-    if (!title && !content && !keepState.quickNoteImage) {
-      showGlobalToast('Catatan Kosong', 'Tuliskan judul, kalimat, atau lampirkan gambar.');
-      collapseQuickNote();
-      return;
+    // Collect responses from all quick-response-textarea elements
+    const responses = [];
+    if (els.quickResponsesContainer) {
+      const textareas = els.quickResponsesContainer.querySelectorAll('.quick-response-textarea');
+      textareas.forEach(ta => {
+        const val = ta.value.trim();
+        if (val) {
+          // If user pasted multi-paragraph or dashed text inside a box, clean it up cleanly
+          const rawBlocks = val.split(/(?:\r?\n\s*[-=_*]{3,}\s*\r?\n|\r?\n\s*\r?\n+)/);
+          rawBlocks.forEach(b => {
+            const cleaned = b.replace(/^[ \t]*[-=_*]{3,}[ \t]*$/gm, '').trim();
+            if (cleaned) responses.push(cleaned);
+          });
+        }
+      });
     }
 
-    // Split content into clean modular responses if multiple paragraphs are provided
-    let responses = [];
-    if (content) {
-      const rawBlocks = content.split(/(?:\r?\n\s*[-=_*]{3,}\s*\r?\n|\r?\n\s*\r?\n+)/);
-      rawBlocks.forEach(b => {
-        const cleaned = b.replace(/^[ \t]*[-=_*]{3,}[ \t]*$/gm, '').trim();
-        if (cleaned) responses.push(cleaned);
-      });
-      if (responses.length === 0) responses = [content];
+    if (!title && responses.length === 0 && !keepState.quickNoteImage) {
+      showGlobalToast('Catatan Kosong', 'Tuliskan judul, respon kalimat, atau lampirkan gambar.');
+      collapseQuickNote();
+      return;
     }
 
     const newNote = {
@@ -609,7 +694,7 @@
       color: keepState.quickNoteColor || 'default',
       isPinned: keepState.quickNotePinned,
       image: keepState.quickNoteImage || null,
-      links: extractUrls(content),
+      links: extractUrls(responses.join('\n\n')),
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       copyCount: 0

@@ -337,8 +337,23 @@
               <input type="text" id="quick-note-title" class="quick-input-title" placeholder="Judul catatan (opsional)" autocomplete="off">
               <button type="button" id="btn-quick-pin" class="btn-note-pin" title="Sematkan Catatan">☆</button>
             </div>
-            <textarea id="quick-note-content" class="quick-input-content" placeholder="Tuliskan catatan, respon livechat, atau SOP..."></textarea>
-            
+
+            <!-- Modular Responses Container for Quick Note Creator -->
+            <div id="quick-responses-container" class="quick-responses-container">
+              <div class="quick-response-item" data-index="0">
+                <div class="quick-response-item-header">
+                  <span class="quick-response-badge">⚡ RESPON 01</span>
+                  <button type="button" class="btn-quick-delete-resp" data-action="delete-quick-resp" title="Hapus respon ini" style="display: none;">✕ Hapus</button>
+                </div>
+                <textarea class="quick-response-textarea" rows="2" placeholder="Tuliskan kalimat atau jawaban respon pertama..."></textarea>
+              </div>
+            </div>
+
+            <!-- Button: Add Response Block in Quick Creator -->
+            <button type="button" id="btn-add-quick-response" class="btn-add-quick-resp">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>+ Tambah Respon Baru</span>
+            </button>
             <!-- Attached Image Preview -->
             <div id="quick-image-preview" class="quick-image-preview-container" style="display: none;">
               <img id="quick-image-preview-img" src="" alt="Pratinjau Gambar" class="quick-image-preview-img">
