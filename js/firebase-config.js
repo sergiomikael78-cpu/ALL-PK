@@ -3,8 +3,8 @@
  */
 
 window.FIREBASE_CONFIG = {
-  databaseURL: "https://pk-matrix-sync-default-rtdb.firebaseio.com",
-  projectId: "pk-matrix-sync"
+  databaseURL: "",
+  projectId: ""
 };
 
 // Fungsi pembantu untuk membaca konfigurasi (dari file atau dari LocalStorage jika diatur via UI)

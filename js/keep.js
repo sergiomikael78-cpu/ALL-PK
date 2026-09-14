@@ -7,8 +7,13 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'PK_KEEP_NOTES';
+  const STORAGE_KEY = 'PK_KEEP_DATA';
   const VIEW_MODE_KEY = 'PK_KEEP_VIEW_MODE';
+
+  // Bersihkan cache peninggalan proyek lama
+  try {
+    localStorage.removeItem('PK_KEEP_NOTES');
+  } catch (e) {}
 
   // State
   const keepState = {

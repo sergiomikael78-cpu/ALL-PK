@@ -6,9 +6,16 @@
 (function () {
   'use strict';
 
-  // Storage Keys
-  const STORAGE_KEY = 'PK_VAULT_TEMPLATES';
-  const STATS_KEY = 'PK_VAULT_STATS';
+  // Storage Keys (Clean slate instance)
+  const STORAGE_KEY = 'PK_TEMPLATES_DATA';
+  const STATS_KEY = 'PK_TEMPLATES_STATS';
+
+  // Bersihkan cache peninggalan proyek lama jika ada di browser ini
+  try {
+    localStorage.removeItem('PK_VAULT_TEMPLATES');
+    localStorage.removeItem('PK_VAULT_STATS');
+    localStorage.removeItem('PK_FIREBASE_CONFIG');
+  } catch (e) {}
 
   // Application State
   const state = {
@@ -283,9 +290,17 @@
           saveTemplates(false); // local only, don't echo back
           applyFilters();
           setSyncStatus('online', 'Cloud Aktif');
+        } else if (val && Array.isArray(val) && val.length === 0) {
+          state.templates = [];
+          saveTemplates(false);
+          applyFilters();
+          setSyncStatus('online', 'Cloud Aktif (0 Template)');
         } else if (!val) {
-          // Empty cloud, auto-seed with initial templates
-          seedCloudData();
+          if (state.templates.length > 0) {
+            seedCloudData();
+          } else {
+            setSyncStatus('online', 'Cloud Aktif (0 Template)');
+          }
         }
       };
 
@@ -329,8 +344,9 @@
 
   function seedCloudData() {
     if (!state.cloudSync.db) return;
-    setSyncStatus('syncing', 'Mengunggah Data...');
     const dataToSeed = state.templates.length > 0 ? state.templates : (window.DEFAULT_TEMPLATES || []);
+    if (dataToSeed.length === 0) return;
+    setSyncStatus('syncing', 'Mengunggah Data...');
     state.cloudSync.db.ref('pk_templates').set(dataToSeed)
       .then(() => {
         setSyncStatus('online', 'Cloud Aktif');
@@ -925,18 +941,20 @@
   }
 
   function resetToOriginal() {
-    const confirmReset = confirm('PERINGATAN: Seluruh perubahan dan template baru Anda akan dikembalikan ke data awal bawaan file XML (397 template). Lanjutkan?');
+    const confirmReset = confirm('PERINGATAN: Seluruh template dan catatan akan dikosongkan secara total. Lanjutkan?');
     if (!confirmReset) return;
 
-    if (window.DEFAULT_TEMPLATES && Array.isArray(window.DEFAULT_TEMPLATES)) {
-      state.templates = JSON.parse(JSON.stringify(window.DEFAULT_TEMPLATES));
-      saveTemplates();
-      applyFilters();
-      elements.modalSettings.style.display = 'none';
-      showToast('Data Direset ke Bawaan XML! ✓', '397 template dipulihkan.');
-    } else {
-      alert('Data default tidak ditemukan!');
+    state.templates = [];
+    saveTemplates(false);
+    applyFilters();
+    if (window.KeepManager && typeof window.KeepManager.setNotes === 'function') {
+      window.KeepManager.setNotes([], true);
     }
+    try {
+      localStorage.removeItem('PK_FIREBASE_CONFIG');
+    } catch (e) {}
+    elements.modalSettings.style.display = 'none';
+    showToast('Data Berhasil Dikosongkan! ✓', 'Semua data template dan catatan telah dibersihkan.');
   }
 
   // =========================================================================
