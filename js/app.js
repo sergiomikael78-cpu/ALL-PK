@@ -6,9 +6,9 @@
 (function () {
   'use strict';
 
-  // Storage Keys (Clean slate instance)
-  const STORAGE_KEY = 'PK_TEMPLATES_DATA';
-  const STATS_KEY = 'PK_TEMPLATES_STATS';
+  // Storage Keys (PK PARAPAT)
+  const STORAGE_KEY = 'PK_PARAPAT_TEMPLATES';
+  const STATS_KEY = 'PK_PARAPAT_STATS';
 
   // Bersihkan cache peninggalan proyek lama jika ada di browser ini
   try {
@@ -66,10 +66,8 @@
     categoriesContainer: document.getElementById('categories-container'),
     countAll: document.getElementById('count-all'),
     countPinned: document.getElementById('count-pinned'),
-    countEvent: document.getElementById('count-event'),
-    countAudit: document.getElementById('count-audit'),
-    countPendamping: document.getElementById('count-pendamping'),
-    countPihak3: document.getElementById('count-pihak3'),
+    countParapat1: document.getElementById('count-parapat1'),
+    countParapat2: document.getElementById('count-parapat2'),
 
     // Filter & Sort Bar
     resultsCountText: document.getElementById('results-count-text'),
@@ -376,24 +374,20 @@
   // =========================================================================
   function updateCategoryCounts() {
     const total = state.templates.length;
-    let pinned = 0, event = 0, audit = 0, pendamping = 0, pihak3 = 0;
+    let pinned = 0, parapat1 = 0, parapat2 = 0;
 
     state.templates.forEach(t => {
       if (t.isPinned) pinned++;
-      if (t.category === 'Khusus Event') event++;
-      else if (t.category === 'PK Anti Audit') audit++;
-      else if (t.category === 'PK Pendamping') pendamping++;
-      else if (t.category === 'Pihak Ke-3') pihak3++;
+      if (t.category === 'Parapat 1') parapat1++;
+      else if (t.category === 'Parapat 2') parapat2++;
     });
 
     if (elements.headerTotalCount) elements.headerTotalCount.textContent = total;
     if (elements.tabPkCount) elements.tabPkCount.textContent = total;
     if (elements.countAll) elements.countAll.textContent = total;
     if (elements.countPinned) elements.countPinned.textContent = pinned;
-    if (elements.countEvent) elements.countEvent.textContent = event;
-    if (elements.countAudit) elements.countAudit.textContent = audit;
-    if (elements.countPendamping) elements.countPendamping.textContent = pendamping;
-    if (elements.countPihak3) elements.countPihak3.textContent = pihak3;
+    if (elements.countParapat1) elements.countParapat1.textContent = parapat1;
+    if (elements.countParapat2) elements.countParapat2.textContent = parapat2;
 
     // Also update settings stats
     if (elements.statTotal) elements.statTotal.textContent = total;

@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mtw_export_macros>
+    <macro inum="0" onum="145" aflag="0" flags="2" name="" uid="17321890-494" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk semua permainan SLOT tentunya memiliki scatter / fitur bonus serta kemenangan ya bosku, Perihal mendapatkan scatter dalam permainan slot bergantung kembali kepada keberuntungan anda tetap semangat dan semoga beruntung dalam bettingan anda berikutnya ya, Salam JP.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="1" onum="144" aflag="0" flags="2" name="" uid="27951390-493" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk kemenangan dan kekalahan member kami sudah diluar kendali kami ya bosku. Semua bergantung kepada keberuntungan dan cara bermain masing-masing member ya bosku. Kami tidak dapat menyunting/setting kemenangan member kami ya bosku.Semoga di periode/permainan selanjutnya anda mendapatkan kemenangan ya bosku. Jangan menyerah dan putus asa ya bosku. Salam JP Paus.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="2" onum="143" aflag="0" flags="2" name="" uid="27788453-492" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Apabila bosku terus mengalami kekalahan, Kami menyarankan bosku untuk jeda terlebih dahulu ya bosku, Jangan dipaksakan ya bosku<BR>Bermain dengan santai dan ikuti feeling anda ya bosku, Kami sebagai admin selalu mendoakan member-member kami mendapatkan kemenangan dan jackpot paus ya bosku<BR>Jangan menyerah ya bosku, Semangat dan keberuntungan pasti akan menghampiri anda ya bosku,Salam jp</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="3" onum="142" aflag="0" flags="2" name="" uid="46285468-444" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk saat ini di situs kami perihal Bonus New Member, Bonus Freebet, Bonus Harian dan Bonus Deposit belum tersedia ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bonus]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="4" onum="141" aflag="0" flags="2" name="" uid="82057906-227" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf&nbsp;&nbsp; bosku , bisa dibantu lampirkan bukti&nbsp;transfer anda yang jelas bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="113" hklp="-2143551487" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="5" onum="140" aflag="0" flags="2" name="" uid="81921312-203" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon kesabarannya menunggu hingga bank BNI sudah kembali normal,apabila sudah kembali normal maka akan kami bantu proseskan ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="6" onum="139" aflag="0" flags="2" name="" uid="81856859-202" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk Deposit atau Withdraw anda akan kami bantu proseskan apabila bank BNI sudah kembali normal ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="7" onum="138" aflag="0" flags="2" name="" uid="81738812-201" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Yth, Saat ini layanan Bank BNI sedang mengalami gangguan, Permintaan Deposit atau Withdraw akan kami proses apabila layanan Bank sudah normal kembali. Gangguan terjadi dari pihak Bank dan belum dapat kami pastikan. Hal tersebut di luar kuasa kami. Harap bersabar dan mohon maaf atas ketidaknyamanannya ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="8" onum="137" aflag="0" flags="2" name="" uid="81492640-200" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku.deposit menggunakan rekening orang lain tidak di perbolehkan ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="9" onum="136" aflag="0" flags="2" name="" uid="81280984-199" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan anda lampirkan nomor rekening yang nama rekeningnya sesuai dengan yang terdaftar ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="10" onum="135" aflag="0" flags="2" name="" uid="81131453-198" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku kami tidak dapat mengganti nomor rekening anda apabila anda melampirkan nomor rekening yang nama rekening nya berbeda dengan yang terdaftar ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="11" onum="134" aflag="0" flags="2" name="" uid="81095484-197" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami hanya dapat membantu anda jika anda dapat memberikan nomor rekening yang valid dengan atas nama rekening yang di awal sudah terdaftar pada user id anda ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="12" onum="133" aflag="0" flags="2" name="" uid="81060953-196" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk perihal ganti rekening harus sama nama rekening dengan nama rekening yang terdaftar di akun anda&nbsp; ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bnama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="13" onum="132" aflag="0" flags="2" name="" uid="80853312-195" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk dana yang status menunggu/pending itu artinya nomor dana&nbsp; tujuan anda sedang limit ya bos , dana yang sudah terkirim akan secara otomatis di kembalikan oleh pihak dana dalam waktu 60-120 menit .<BR>silahkan kirimkan dana anda kembali ke nomor dana kami yang baru ketika dana anda sudah di kembalikan oleh pihak dana .Terima Kasih.<BR></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pen]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="14" onum="131" aflag="0" flags="2" name="" uid="80805578-194" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami hanya melayani seputar kendala deposit, withdraw, dan kendala dalam permainan saja ya bosku. Terima Kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/mfmf]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="15" onum="130" aflag="0" flags="2" name="" uid="80741703-193" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Transaksi mencurigakan atau tidak wajar dideteksi secara otomatis oleh sistem. dan keputusan bersifat mutlak, tidak dapat diganggu gugat - sekian dan terima kasih<BR></DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/hantu]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="16" onum="129" aflag="0" flags="2" name="" uid="80712515-192" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Sesuai peraturan permainan, transaksi tidak wajar pada pasaran tertentu akan diblokir</DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/hantu]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="17" onum="128" aflag="0" flags="2" name="" uid="80685140-191" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Ditemukan transaksi tidak wajar oleh sistem, sehingga userid diblokir permanent<BR></DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/hantu]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="18" onum="127" aflag="0" flags="2" name="" uid="80630703-190" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Baik bosku, untuk form deposit anda sudah kami bantu reject / batalkan ya.<BR></DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/dbtl]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="19" onum="126" aflag="0" flags="2" name="" uid="80554500-189" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk deposit anda akan kami bantu proses apabila bank BCA sudah kembali onlline ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/offbca]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="20" onum="125" aflag="0" flags="2" name="" uid="80380906-188" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku untuk saat ini bank BCA sedang offline kami mohon kesediannya menunggu hingga bank BCA sudah kembali onlline,apabila sudah onlline maka untuk deposit anda akan kami bantu proseskan ya bosku,terimakasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/offbca]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="21" onum="124" aflag="0" flags="2" name="" uid="80331265-187" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><SPAN>OFFLINE BCA <BR>Senin s/d Jumat : 22:00 WIB s/d 00:20 WIB<BR>Sabtu &amp; Minggu <BR>: ONLINE 24 JAM<BR>(Hari besar/Tanggal merah : BANK BCA TIDAK <BR>OFFLINE)<BR><BR>Jadi jika anda sudah melakukan deposit ,Silakan ditunggu hingga <BR>bank tersebut online kembali ya bosku</SPAN></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/offbca]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="22" onum="123" aflag="0" flags="2" name="" uid="80286343-186" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Kedepannya apabila anda deposit menggunakan agen / brilink kami sarankan anda untuk melampirkan bukti berupa struk kertas ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bantu3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="23" onum="122" aflag="0" flags="2" name="" uid="80055859-185" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Deposit anda kali ini akan kami bantu proses ya bosku , kedepannya kami harap anda melakukan deposit mengunakan nama rekening yang sama dengan nama akun terdaftar ya bosku di karenakan di kami situs latoto tidak bisa melakukan deposit mengunakan pihak ke 3 (nama rekening yang berbeda dengan nama akun terdaftar) untuk kali ini akan kami bantu ya bosku.<BR></DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bantu3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="24" onum="121" aflag="0" flags="2" name="" uid="79916875-184" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk akun anda sudah berhasil kami buka / aktifkan kembali,silahkan anda isi form deposit anda agar dapat kami proseskan ya bosku,terimakasih/</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/aktif]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="25" onum="120" aflag="0" flags="2" name="" uid="79869109-183" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>akun anda sudah kami aktifkan kembali ya bosku silahkan coba login dan mengisi form withdraw anda kembali agar withdraw anda dapat kam100</DIV><DIV>&nbsp;</DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/aktif]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="26" onum="119" aflag="0" flags="2" name="" uid="339538390-260" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku. bisa di bantu perihal anda ingin melakukan deposit atau withdraw ya bosku ?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4194" hklp="-2142240767" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="27" onum="118" aflag="0" flags="2" name="" uid="339502171-259" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku akun anda telah terblokir oleh system kami secara otomatis dikarenakan melakukan deposit kosong secara berulang ulang</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/kos]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="28" onum="117" aflag="0" flags="2" name="" uid="339365156-258" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>apakah anda setuju untuk user id xxx kami blokir agar kami dapat membantu membuka akun anda xxx bosku?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/2user]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="29" onum="116" aflag="0" flags="2" name="" uid="339274531-257" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf bos ku di sini kami cek nomor rekening yang anda berikan terdaftar pada user id XXXXX ya bos ku, apakah anda setuju jika kami memblokir <BR>user id tersebut agar kami dapat membuka lock dan memproseskan withdraw anda pada user id XXXX</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/2user]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="30" onum="115" aflag="0" flags="2" name="" uid="53808437-256" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk perihal withdraw anda sudah berhasil kami proseskan dan untuk saldo kami juga sudah terpotong ya bosku.&nbsp;</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wds]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="31" onum="114" aflag="0" flags="2" name="" uid="53751250-255" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk withdraw anda sudah berhasil kami proseskan sesuai dengan rekening terdaftar anda ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wds]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="32" onum="113" aflag="0" flags="2" name="" uid="53721578-254" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Penarikan dana ( withdraw ) anda sudah berhasil kami <BR>proseskan,silahkan cek di mutasi anda kembali ya bosku.<BR>Terimakasih telah menghubungi CS LATOTO. semoga jawaban dari kami dapat <BR>membantu kendala anda.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wds]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="33" onum="112" aflag="0" flags="2" name="" uid="53601421-253" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Kami cek disini untuk nama pengirim tersebut tidak ada tercetak di mutasi rekening kami,dibantu sebutkan nama pengirim dana deposit anda yang benar ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/nama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="34" onum="111" aflag="0" flags="2" name="" uid="53494359-252" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan anda lampirkan nama pengirim dana deposit anda agar kami dapat melakukan pengecekan ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/nama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="35" onum="110" aflag="0" flags="2" name="" uid="53462640-251" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu sebutkan nama pengirim dana deposit anda ya bosku?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/nama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="36" onum="109" aflag="0" flags="2" name="" uid="53433593-250" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku , bisa di bantu nama pengirim dana nya bosku<BR>agar dana anda bisa kami cek dan bisa kami proseskan</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/nama]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="37" onum="108" aflag="0" flags="2" name="" uid="694578250-542" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Kami cek disini untuk dana deposit anda sudah tercetak pada mutasi rekening kami dan dana deposit anda sudah berhasil kami proseskan,silahkan anda cek kembali ya bosku,terimakasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cetak]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="38" onum="107" aflag="0" flags="2" name="" uid="606412437-541" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Baik bosku, Deposit anda akan segera kita proseskan. Mohon kesabarannya untuk menunggu ya bosku.<BR>Noted : Keterhambatan dalam deposit bisa terjadi dikarenakan keterlambatan tercetaknya dimutasi kami ya bosku. Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/dpa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="39" onum="106" aflag="0" flags="2" name="" uid="606077515-540" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>hallo ada yang bisa kami bantu bosku?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4193" hklp="-2142306303" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="40" onum="105" aflag="0" flags="2" name="" uid="605955453-539" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Selamat datang di LATOTO,ada yang bisa kami bantu bosku?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4193" hklp="-2142306303" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="41" onum="104" aflag="0" flags="2" name="" uid="605758640-538" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dibantu lampirkan user id anda yang benar yang sudah terdaftar pada situs kami,agar kami dapat melakukan pengecekan ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/user]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="42" onum="103" aflag="0" flags="2" name="" uid="605421843-537" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf bosku bisa di bantu dengan user id / username login anda yang benar bosku ?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/user]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="43" onum="102" aflag="0" flags="2" name="" uid="521797156-536" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku.di sini kami cek user id yang anda berikan tidak terdaftar ya bosku.mohon dibantu informasikan user id anda yang benar dan sudah terdaftar ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/user]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="44" onum="101" aflag="0" flags="2" name="" uid="521528062-534" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>salam jp bosku,selamat bermain dan terimakasih sudah menghubungi CS LATOTO ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/jp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="45" onum="100" aflag="0" flags="2" name="" uid="520294671-533" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>salam jp bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/jp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="46" onum="99" aflag="0" flags="2" name="" uid="520263218-532" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>amin bosku akan kami doakan bosku Jackpot dan selamat bermain dengan nyaman bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/jp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="47" onum="98" aflag="0" flags="2" name="" uid="519843843-531" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami cek disini untuk nomor rekening anda xxx juga tidak terdaftar pada situs kami ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/td]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="48" onum="97" aflag="0" flags="2" name="" uid="519792109-530" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan anda lampirkan data rekening anda yang benar dan yang sudah terdaftar pada situs kami ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/td]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="49" onum="96" aflag="0" flags="2" name="" uid="519695281-529" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk data rekening yang anda lampirkan tidak terdaftar di situs kami ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/td]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="50" onum="95" aflag="0" flags="2" name="" uid="519471593-528" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan anda lampirkan screnshot tampilan layar anda agar kami dapat mengetahui kendala anda ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sst]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="51" onum="94" aflag="0" flags="2" name="" uid="519426500-527" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>tidak bisa bagaimana ya bosku? bisa dibantu&nbsp; lampirkan screnshot tampilan layar anda bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sst]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="52" onum="93" aflag="0" flags="2" name="" uid="519215750-526" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>bisa di bantu screnshot tampilan layar anda agar kami dapat mengetahui kendala anda ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sst]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="53" onum="92" aflag="0" flags="2" name="" uid="519083015-524" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>oke bosku,sama-sama senang bisa mambantu anda bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4162" hklp="-2144337919" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="54" onum="91" aflag="0" flags="2" name="" uid="519065171-523" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>oke bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4162" hklp="-2144337919" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="55" onum="90" aflag="0" flags="2" name="" uid="518973484-522" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>baik bosku,terimakasih kembali </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4162" hklp="-2144337919" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="56" onum="89" aflag="0" flags="2" name="" uid="518914171-521" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>baik bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4162" hklp="3145729" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="57" onum="88" aflag="0" flags="2" name="" uid="445102484-519" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>jangan khawatir bosku, untuk kemenengan berapa pun yang anda lakukan akan langsung di bayar dan akan langsung masuk kerekening tujuan yang sesuai dengan pendaftaran dari awal anda mendaftar akun di LATOTO ya bosku terima kasih bos, telah bergabung dengan kami bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/aman]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="58" onum="87" aflag="0" flags="2" name="" uid="444520421-518" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>baik bosku.Kami akan membantu anda daftar ya.Sebelumnya tolong berikan data berikut ini kepada kami ya bos:<BR>UserName :<BR>Email :<BR>Nomor Telepon:<BR>Nama Bank :<BR>Nomor Rekening :<BR>Nama Rekening :</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bantud]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="59" onum="86" aflag="0" flags="2" name="" uid="444462296-517" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>dibantu lampirkan foto profil ewallet OVO anda ya bosku agar kami dapat melakukan pengecekan ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ovo]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="60" onum="85" aflag="0" flags="2" name="" uid="444410046-516" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami memerlukan foto profil ewallet OVO anda untuk melakukan pengecekan ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ovo]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="61" onum="0" aflag="0" flags="2" name="" uid="444325968-515" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon di bantu Foto profil ewallet&nbsp;OVO anda bos ku,<BR>berikut contoh nya :<BR><A href="https://sleekshot.app/v/AHXJ1gaGgB0E">https://sleekshot.app/v/AHXJ1gaGgB0E</A></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ovo]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="62" onum="1" aflag="0" flags="2" name="" uid="443837140-514" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami memerlukan foto profil ewallet DANA anda untuk melakukan pengecekan ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sdana]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="63" onum="2" aflag="0" flags="2" name="" uid="443767703-513" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>dibantu lampirkan foto profil ewallet DANA anda ya bosku agar kami dapat melakukan pengecekan ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sdana]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="64" onum="3" aflag="0" flags="2" name="" uid="443038531-512" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Bisa di bantu foto akun gopay anda bosku <BR>agar kami bisa melakukan pengecekan<BR>berikut contohnya : <BR><A href="https://sleekshot.app/v/xKGGVJvJQ8te">https://sleekshot.app/v/xKGGVJvJQ8te</A></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/gopay]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="65" onum="4" aflag="0" flags="2" name="" uid="442991109-511" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon di bantu Foto profil ewallet dana anda bos ku,<BR>berikut contoh nya :<BR><A href="https://sleekshot.app/v/Ei96oLqKj36E">https://sleekshot.app/v/Ei96oLqKj36E</A></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/sdana]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="66" onum="5" aflag="0" flags="2" name="" uid="442510171-510" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Yth, untuk tujuan rekening deposit kami anda dapat lihat di bagian menu deposit, saran kami selalu pastikan kembali rekening kami yang aktif sebelum anda melakukan pengiriman dana, terima kasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4200" hklp="-2142765055" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="67" onum="6" aflag="0" flags="2" name="" uid="442436453-509" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami mohon untuk tidak melewatkan informasi yang kami berikan ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/paham]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="68" onum="7" aflag="0" flags="2" name="" uid="436900515-508" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf&nbsp;atas spam yang kami berikan sebelumnya ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/maaf]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="69" onum="8" aflag="0" flags="2" name="" uid="436699140-507" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku atas kesalahan informasi yang kami berikan kepada anda sebelumnya, dan berikut kami jelaskan informasi tersebut kepada anda, terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/maaf]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="70" onum="9" aflag="0" flags="2" name="" uid="436634671-506" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku saat ini kami belum menyediakan deposit via pulsa.<BR>bosku bisa deposit via aplikasi ( dana , ovo , gopay , link aja )<BR>terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pulsa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="71" onum="10" aflag="0" flags="2" name="" uid="436589265-505" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>user id : <BR>password : aa1122<BR>silahkan di coba login kembali ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pass]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="72" onum="11" aflag="0" flags="2" name="" uid="436374296-504" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan anda isi&nbsp;form deposit anda bosku agar kami dapat memproses deposit anda ya bosku, Terimakasih.<BR>NB: silahkan di konfirmasi kembali jika anda sudah mengisi form deposit ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="117" hklp="-2143289343" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="73" onum="12" aflag="0" flags="2" name="" uid="436274046-503" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Silahkan anda isi form deposit anda sesuai dengan tujuan transfer anda ya bosku.<BR>NB: silahkan di konfirmasi kembali jika anda sudah mengisi form deposit ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="117" hklp="-2143289343" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="74" onum="13" aflag="0" flags="2" name="" uid="435480703-502" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan di isi form deposit anda dengan nominal yang benar ya bosku, sesuai dengan dana yang anda transfer ya bosku.<BR>NB: silahkan di konfirmasi kembali jika anda sudah mengisi form deposit ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="117" hklp="-2143289343" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="75" onum="14" aflag="0" flags="2" name="" uid="435404421-501" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY><DIV>Baik bosku, untuk form deposit anda sudah kami bantu reject / batalkan ya bosku.<BR></DIV></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="117" hklp="-2143289343" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="76" onum="15" aflag="0" flags="2" name="" uid="435325171-500" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku silahkan di isi form deposit anda ya bosku.<BR>NB: silahkan di konfirmasi kembali jika anda sudah mengisi form deposit ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="117" hklp="-2143289343" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="77" onum="16" aflag="0" flags="2" name="" uid="435253156-498" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku Perihal bonus Lucky Wheel atau Luckyspin secara otomatis dibagikan oleh system kami ya bosku, jika anda mencapai syarat dan ketentuan yang berlaku pasti bonus sudah masuk ke akun anda ya bosku, tanpa perlu anda claim</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/well]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="78" onum="17" aflag="0" flags="2" name="" uid="435182640-497" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Untuk saat ini di situs kami perihal Bonus New Member, Bonus Freebet, Bonus Harian dan Bonus Deposit belum tersedia ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/freebet]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="79" onum="18" aflag="0" flags="2" name="" uid="434752500-496" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan anda lampirkan nama dan nomor rekening anda ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/lupa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="80" onum="19" aflag="0" flags="2" name="" uid="434733750-495" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>bisa dibantu dengan data lengkap pada akun anda bosku seperti :<BR>nama rekening :<BR>nomor rekening :<BR>akan kami bantu pengecekkan nya terlebih dahulu. Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/lupa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="81" onum="20" aflag="0" flags="2" name="" uid="434324078-494" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami tidak dapat membuka akun anda apabila anda tidak melakukan transfer ke rekening yang kami berikan ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pulih]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="82" onum="21" aflag="0" flags="2" name="" uid="434232812-493" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>apabila anda ingin kami bantu buka kembali akun anda silahkan anda lakukan transfer terlebih dahulu ke rekening yang kami berikan diatas ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pulih]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="83" onum="22" aflag="0" flags="2" name="" uid="434078343-492" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>jika bosku ingin kami bantu pulihkan akun anda silahkan bosku mengirimkan <BR>dana anda terlebih dahulu&nbsp; ke bank deposit kami ya bosku <BR>nama :<BR>nomer rekening :<BR>bank :<P>Berikut nomor rekening kami silahkan anda kirimkan dana anda ke rekening <BR>tersebut, jika anda sudah mengirimkan dana anda silahkan anda berikan bukti <BR>transfer anda agar kami dapat membuka lock pada user id anda</P><BR>Note : Minimal deposit adalah 10.000</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/pulih]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="84" onum="23" aflag="0" flags="2" name="" uid="433081875-490" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk dana deposit anda akan kami bantu proses apabila layanan E-Wallet DANA&nbsp;sudah kembali normal mohon kesabarannya menunggu ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/danag]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="85" onum="24" aflag="0" flags="2" name="" uid="432932687-489" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Yth, Saat ini layanan E-Wallet DANA sedang mengalami gangguan, Perihal Deposit anda akan kami proses apabila layanan E-Wallet DANA sudah normal kembali. untuk estimasi waktu Gangguan belum dapat kami pastikan, Harap bersabar dan mohon maaf atas ketidaknyamanannya ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/danag]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="86" onum="25" aflag="0" flags="2" name="" uid="432684031-488" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Yth, Member Setia situs latoto kami informasikan saat ini untuk Deposit via EWALLET DANA&nbsp; untuk sementara deposit dialihkan ke QRIS, perihal dana deposit anda akan di proses ketika dana sudah kembali normal ya bosku, Untuk estimasi waktunya masih belum dapat kami perkirakan ya bosku , silahkan di tunggu dan di cek secara berkala ya bosku, Kami mohon kesabaran anda untuk menunggu beberapa saat kedepan, mohon maaf atas ketidaknyamanan nya, Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/danag]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="87" onum="26" aflag="0" flags="2" name="" uid="432429406-487" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk minimal&nbsp;withdraw di situs latoto rp 50,000 ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/min]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="88" onum="27" aflag="0" flags="2" name="" uid="432401734-486" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk minimal deposit di situs latoto rp 10,000 ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/min]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="89" onum="28" aflag="0" flags="2" name="" uid="313285968-485" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan anda cek kembali saldo akun anda bosku dikarenakan untuk deposit anda sudah berhasil kami proseskan ya bosku,terimakasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[dps]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="90" onum="29" aflag="0" flags="2" name="" uid="312846359-484" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk dana deposit anda sudah berhasil kami proseskan ke akun anda,silahkan anda cek kembali ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[dps]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="91" onum="30" aflag="0" flags="2" name="" uid="312554296-483" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Dana deposit anda telah berhasil kami proses silakan cek di akun anda ya bosku , Selamat bermain dan kami doakan semoga beruntung ya bosku.<BR>NB : - Pastikan anda selalu melakukan pengecekan rekening tujuan deposit AKTIF kami.<BR>- Kami sarankan untuk tidak menuliskan keterangan apapun pada catatan sebelum melakukan pengiriman dana ke pihak kamiPastikan sudah download aplikasi, agar dapat bonus tambahan setiap hari.<BR>download, login, mainkan roda keberuntungan anda - terima kasih.<BR>link aplikasi : <A href="https://bit.ly/LATOTO-APK">https://bit.ly/LATOTO-APK</A></BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[dps]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="92" onum="31" aflag="0" flags="2" name="" uid="311083156-482" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku kami tidak dapat memproses deposit anda dikarenakan untuk tujuan transfer anda bukan ke rekening kami ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/no]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="93" onum="32" aflag="0" flags="2" name="" uid="309363031-481" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk tujuan transfer anda tidak ke rekening kami ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/no]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="94" onum="33" aflag="0" flags="2" name="" uid="309221156-480" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku kami tidak memiliki nomor rekening dan nama tujuan yang anda berikan ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/no]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="95" onum="34" aflag="0" flags="2" name="" uid="308848984-479" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk barcode qris kami bisa anda cek pada menu deposit kami ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4200" hklp="-2142765055" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="96" onum="35" aflag="0" flags="2" name="" uid="308583796-478" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk nomor rekening kami yang aktif bisa anda cek pada menu deposit kami ya bosku.terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4200" hklp="-2142765055" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="97" onum="36" aflag="0" flags="2" name="" uid="308535953-477" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan bosku jika ingin deposit.untuk nomor rekening tujuan bisa bosku cek di menu deposit nomor kami yang aktif ya bosku.terima kasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="4200" hklp="-2142765055" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="98" onum="37" aflag="0" flags="2" name="" uid="307961921-476" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon untuk memperjelas kendala yang anda alami saat ini ya bosku?</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="115" hklp="-2143420415" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="99" onum="38" aflag="0" flags="2" name="" uid="307797984-475" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>bisa diperjelas kendala anda bosku agar kami dapat membantu menyelesaikan kendala yang anda alami saat ini ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="115" hklp="-2143420415" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="100" onum="39" aflag="0" flags="2" name="" uid="307676750-474" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku bisa di perjelas kendala yang anda alami agar kami dapat memberikan solusi untuk anda ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="115" hklp="-2143420415" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="101" onum="40" aflag="0" flags="2" name="" uid="307574375-473" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>baik bosku , akan kami cek terlebih dahulu ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="102" onum="41" aflag="0" flags="2" name="" uid="307466140-471" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk saat ini dana deposit anda masih dalam pengecekan kami,mohon kesabarannya menunggu beberapa saat ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="103" onum="42" aflag="0" flags="2" name="" uid="307351984-470" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon kesabarannya menunggu ya bosku untuk saat ini kendala anda masih&nbsp; dalam pengecekan kami ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="104" onum="43" aflag="0" flags="2" name="" uid="307269796-469" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Baik bosku untuk kendala anda&nbsp; akan kami lakukan pengecekan terlebih dahulu ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="105" onum="44" aflag="0" flags="2" name="" uid="307222125-468" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Baik bosku , dana anda akan kami lakukan pengecekan terlebih dahulu ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="106" onum="45" aflag="0" flags="2" name="" uid="307182484-467" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>silahkan di tunggu ya bosku untuk dana anda sedang dalam pengecekan kami ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cek]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="107" onum="46" aflag="0" flags="2" name="" uid="291642687-465" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kedepannya kami sarankan anda untuk tidak menggunakan deposit pihak ketiga ya bosku dikarenakan tidak&nbsp;&nbsp; di perbolehkan deposit di situs latoto menggunakan pihak ketiga/rekening pribadi orang lain ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="108" onum="47" aflag="0" flags="2" name="" uid="286471375-464" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk estimasi waktu tidak bisa kami tentukan,mohon kesabarannya menunggu hingga bank BRI sudah kembali normal ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/brig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="109" onum="48" aflag="0" flags="2" name="" uid="286411828-463" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon kesabarannya menunggu hingga bank BRI sudah kembali normal ya bosku ,apabila sudah kembali normal maka untuk deposit anda akan kami bantu proseskan ya bosku,terimakasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/brig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="110" onum="49" aflag="0" flags="2" name="" uid="286249796-462" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku saat ini bank bri sedang dalam gangguan , deposit anda akan kami proseskan kembali jika bank bri sudah normal kembali ya bosku.terima kasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/brig]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="111" onum="50" aflag="0" flags="2" name="" uid="285802796-461" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami sarankan anda untuk mendaftarkan akun baru menggunakan nama rekening yang sesuai dengan nama pengirim dana deposit anda ya bosku,terimakasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="112" onum="51" aflag="0" flags="2" name="" uid="285597281-460" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Bosku bisa mengclaim dana anda dengan cara mendaftarkan kembali id baru dengan menggunakan rekening pengirim yang anda pakai tersebut ya bosku.terima kasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="113" onum="52" aflag="0" flags="2" name="" uid="285498000-459" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk deposit anda akan kami bantu proses apabila anda mengclaim deposit anda menggunakan akun yang nama rekeningnya sesuai dengan nama pengirim dana deposit anda ya bosku.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="114" onum="53" aflag="0" flags="2" name="" uid="285305078-458" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku anda tidak di perbolehkan deposit di situs LATOTO menggunakan pihak ketiga/rekening pribadi orang lain ya bosku .saran kami anda dapat mengclaim dana anda dengan cara mendaftarkan kembali id baru dengan menggunakan rekening pengirim yang anda pakai tersebut ya bosku.terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ph3]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="115" onum="54" aflag="0" flags="2" name="" uid="285073843-457" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon menunggu beberapa saat ya bosku dana anda dalam proses pengiriman.<BR>note : jika dalam 1 x 24 jam dana anda belum masuk di mutasi bank anda , silahkan hubungi kami kembali ya bosku.<BR>terima kasih.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="114" hklp="-2143485951" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="116" onum="55" aflag="0" flags="2" name="" uid="284998500-456" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami informasikan kepada anda bahwa withdraw yang anda lakukan sedang dalam antrian dan withdraw yang anda lakukan akan kami proses sesuai dengan antrian yang masuk ya bosku jika dalam 1 x 24 jam withdraw yang anda lakukan tidak anda terima silahkan hubungi kami kembali Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="114" hklp="-2143485951" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="117" onum="56" aflag="0" flags="2" name="" uid="284969890-455" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Penarikan / withdraw anda akan kami proseskan sesuai dengan antrian yang ada ya <BR>bosku . Terima Kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="114" hklp="-2143485951" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="118" onum="57" aflag="0" flags="2" name="" uid="284771984-454" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Baik bosku dana withdraw anda akan segera kami proseskan sesuai antrian ya bosku,mohon bersabar dan kerjasamanya untuk menunggu beberapa saat ya bosku.terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="114" hklp="-2143485951" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="119" onum="58" aflag="0" flags="2" name="" uid="284530625-453" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf bosku perihal tersebut silahkan anda konfirmasi ke pihak tersebut ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="120" onum="59" aflag="0" flags="2" name="" uid="284431734-452" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk saat ini kami tidak menyediakan layanan whatsaap ya bosku,untuk perihal tersebut silahkan anda konfirmasi ke pihak tersebut ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="121" onum="60" aflag="0" flags="2" name="" uid="284399265-451" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf atas kendala anda ya bosku seperti yang kami sampaikan untuk saat ini kami tidak menyediakan layanan whatsaap ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/wa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="122" onum="61" aflag="0" flags="2" name="" uid="284298468-450" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon kesabarannya menunggu hingga dana deposit anda tercetak pada mutasi rekening kami ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cetak]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="123" onum="62" aflag="0" flags="2" name="" uid="282915812-447" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Deposit anda akan segera kami proses setelah dana anda tercetak pada mutasi kami ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cetak]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="124" onum="63" aflag="0" flags="2" name="" uid="282898968-446" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku untuk saat ini mutasi anda belum tercetak di mutasi kami ya bosku,mohon di tunggu ya bosku ,jika mutasi anda sudah tercetak maka dana anda akan kami proses secepatnnya ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/cetak]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="125" onum="64" aflag="0" flags="2" name="" uid="282796140-445" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf atas kendalanya ya bos ku , kami disini selalu berharap agar bos ku dapat terus bermain di situs kami, Jika bos ku terus bermain dan pantang menyerah, kami yakin bos ku bisa mendapatkan kemenangan hingga ratusan juta rupiah seperti member kami yang lainnya ya bos ku. Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="126" onum="65" aflag="0" flags="2" name="" uid="282786796-444" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Kegagalan adalah kemenangan yang tertunda bosku , jangan menyerah karena dengan menyerah berarti tidak ada kemenangan yang anda dapatkan bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="127" onum="66" aflag="0" flags="2" name="" uid="282714093-443" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf kami hanya pihak operator ya bossku yang hanya melayani deposit, withdraw dan kendala situs,dan kami tidak ada hak dalam kemenangan member,semua tergantung pada hoki anda saja ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="128" onum="67" aflag="0" flags="2" name="" uid="213772718-442" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku , kami tidak bisa membantu deposit anda apabila tidak dibantu dengan bukti transfer ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="113" hklp="-2143551487" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="129" onum="68" aflag="0" flags="2" name="" uid="213711312-441" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf bosku,bisa dibantu dengan bukti transfer anda bosku ?&nbsp;agar kami bisa membantu anda untuk melakukan pengecekan&nbsp;,Terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="113" hklp="-2143551487" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="130" onum="69" aflag="0" flags="2" name="" uid="213571312-440" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf bosku , bisa di bantu kirimkan foto bukti transfer anda kepada kami bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="113" hklp="3932161" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="131" onum="70" aflag="0" flags="2" name="" uid="208242687-439" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami selalu mendokan bosku semoga bisa menang di semua permainan yang bosku mainkan.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="132" onum="71" aflag="0" flags="2" name="" uid="208057015-438" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Jangan berkecil hati ya bosku, kami doakan semoga di permainan selanjutnya menang banyak ya bosku. tetap semangat bosku, jangan menyerah tetap terus mencoba dipermainan selanjutnya bosku. pastikan anda bermain dengan sungguh sunggu bosku sehingga kemenangan berpihak kepada anda ya bosku. Kami selalu doakan yang terbaik disetiap permainan anda bosku, semoga jp bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="133" onum="72" aflag="0" flags="2" name="" uid="207791875-437" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>menang atau kalah bukan tergantung dengan bandar bosku.semua tergantung hoki Bosku. Jika kalah dengan 1 Permainan, boleh di coba bermain dengan permainan yang lain yang lebih hoki dari permainan sebelumnnya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="134" onum="73" aflag="0" flags="2" name="" uid="207739046-436" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>tetap semangat ya bosku semoga di permainan berikutnya anda jp kami akan trus mendoakan anda menang ya bosku, jangan patah semangat bosku ayo bermain dan jp bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="135" onum="74" aflag="0" flags="2" name="" uid="207623375-435" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>semua permainan di situs kami adalah real game dan fair play ya bos ku, tidak pernah ada settingan apa lagi manipulasi ya bos ku , kalah dan menangnya anda adalah tergantung dari keberuntungan anda ya bosku, terima kasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="136" onum="75" aflag="0" flags="2" name="" uid="207547203-433" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf tidak ada settingan apapun ya bosku di dalam game, silakan gunakan keberuntungan anda di lain hari ya bosku, salam hoki</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/doa]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="137" onum="76" aflag="0" flags="2" name="" uid="206792140-432" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>untuk estimasi waktu tidak bisa kami tentukan ya bosku, dikarenakan untuk Perihal bonus sudah secara otomatis dibagikan oleh system kami ya boskua</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bonus]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="138" onum="77" aflag="0" flags="2" name="" uid="206764265-431" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>mohon maaf ya bosku untuk saat ini kami tidak menyediakan bonus seperti itu ya bosku,terimakasih</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bonus]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="139" onum="78" aflag="0" flags="2" name="" uid="206581234-430" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>Mohon maaf ya bosku Perihal bonus sudah secara otomatis dibagikan oleh system kami ya bosku, jika anda mencapai syarat dan ketentuan yang berlaku pasti bonus sudah masuk ke akun anda ya bosku, tanpa perlu anda claim.</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/bonus]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="140" onum="79" aflag="0" flags="2" name="" uid="206453687-428" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>apabila anda tidak melampirkan foto ktp anda maka kami tidak dapat melakukan pengecekan ya bosku,terimakasih </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ktp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="141" onum="80" aflag="0" flags="2" name="" uid="206431828-427" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>kami memerlukan foto ktp anda untuk melakukan pengecekan ya bosku</BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ktp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="142" onum="81" aflag="0" flags="2" name="" uid="206285437-426" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[text#macro:<HTML><HEAD><META content="text/html; charset=unicode" http-equiv=Content-Type><META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD><BODY>dibantu lampirkan foto ktp anda bosku agar kami dapat melakukan pengecekan ya bosku </BODY></HTML>]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="0" hklp="0" hkx="0" hkxlp="0" ktflags="16" trigtype="0">
+            <tscut><![CDATA[/ktp]]></tscut>
+        </trigger>
+    </macro>
+    <macro inum="143" onum="82" aflag="0" flags="2" name="" uid="204426437-415" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[silahkan anda lampirkan user id / username login anda dengan benar ya bosku]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="112" hklp="-2143617023" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="144" onum="83" aflag="0" flags="2" name="" uid="204130468-414" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[dibantu sebutkan user id / username login anda ya bosku?]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="112" hklp="-2143617023" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+    <macro inum="145" onum="84" aflag="0" flags="2" name="" uid="203877781-413" ifile="" ii="0" ctx="0" ctxby="0" insp_uname="" insp_domain="" insp_enabled="0" ome_option="0" ome_runmacro="" insMode="0" speed="0" rep="1" mflags="0">
+        <macroText><![CDATA[bisa di bantu dengan user id anda bosku?]]></macroText>
+        <descr><![CDATA[]]></descr>
+        <trigger hk="112" hklp="-2143617023" hkx="0" hkxlp="0" ktflags="16" trigtype="0"/>
+    </macro>
+</mtw_export_macros>

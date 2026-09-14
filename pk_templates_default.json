@@ -1,10 +1,4 @@
-/**
- * Dataset Template & Trigger Perfect Keyboard - PK PARAPAT
- * Total: 483 templates
- * Diekstrak dari: parapat1.xml, parapat2.xml
- */
-
-window.DEFAULT_TEMPLATES = [
+[
   {
     "id": "tpl_1",
     "order": 1,
@@ -7733,4 +7727,4 @@ window.DEFAULT_TEMPLATES = [
     "copyCount": 0,
     "createdAt": "2026-09-14"
   }
-];
+]
