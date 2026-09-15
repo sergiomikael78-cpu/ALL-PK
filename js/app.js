@@ -27,6 +27,7 @@
     activeCategory: 'all',
     activeTab: 'pk', // 'pk' | 'keep'
     searchQuery: '',
+    searchMode: 'all', // 'all' | 'trigger' | 'content'
     sortBy: 'default',
     totalCopiedCount: 0,
     pageSize: 30,
@@ -70,6 +71,8 @@
     // Search
     searchInput: document.getElementById('search-input'),
     btnClearSearch: document.getElementById('btn-clear-search'),
+    searchModeContainer: document.getElementById('search-mode-container'),
+    searchModePills: document.querySelectorAll('.search-mode-pill'),
 
     // Categories
     categoriesContainer: document.getElementById('categories-container'),
@@ -461,6 +464,34 @@
     if (elements.statPinned) elements.statPinned.textContent = pinned;
   }
 
+  function setSearchMode(mode) {
+    state.searchMode = mode;
+
+    // Update active class on search mode pills
+    if (elements.searchModePills) {
+      elements.searchModePills.forEach(p => {
+        p.classList.toggle('active', p.getAttribute('data-mode') === mode);
+      });
+    }
+
+    // Update placeholder & input styling
+    if (elements.searchInput) {
+      elements.searchInput.classList.remove('mode-trigger', 'mode-content');
+      if (mode === 'trigger') {
+        elements.searchInput.placeholder = '🎯 Cari kata trigger (contoh: limit/, baca/, Num 0)...';
+        elements.searchInput.classList.add('mode-trigger');
+      } else if (mode === 'content') {
+        elements.searchInput.placeholder = '📝 Cari di dalam isi kalimat pesan CS...';
+        elements.searchInput.classList.add('mode-content');
+      } else {
+        elements.searchInput.placeholder = 'Cari trigger (contoh: kode/, 2id/) atau kata...';
+      }
+      elements.searchInput.focus();
+    }
+
+    applyFilters();
+  }
+
   function applyFilters() {
     const query = state.searchQuery.trim().toLowerCase();
     const cat = state.activeCategory;
@@ -470,12 +501,23 @@
       if (cat === 'pinned' && !item.isPinned) return false;
       if (cat !== 'all' && cat !== 'pinned' && item.category !== cat) return false;
 
-      // Search filter
+      // Search filter with Mode Support
       if (query) {
-        const triggerMatch = (item.trigger || '').toLowerCase().includes(query);
-        const contentMatch = (item.content || '').toLowerCase().includes(query);
-        const nameMatch = (item.name || '').toLowerCase().includes(query);
-        return triggerMatch || contentMatch || nameMatch;
+        if (state.searchMode === 'trigger') {
+          // KHUSUS TRIGGER: Hanya cocokkan trigger / shortcut / hotkey
+          const triggerMatch = (item.trigger || '').toLowerCase().includes(query);
+          const nameMatch = (item.name || '').toLowerCase().includes(query);
+          return triggerMatch || nameMatch;
+        } else if (state.searchMode === 'content') {
+          // KHUSUS ISI: Hanya cocokkan isi kalimat
+          return (item.content || '').toLowerCase().includes(query);
+        } else {
+          // Mode Semua (Trigger, Isi Kalimat, Nama)
+          const triggerMatch = (item.trigger || '').toLowerCase().includes(query);
+          const contentMatch = (item.content || '').toLowerCase().includes(query);
+          const nameMatch = (item.name || '').toLowerCase().includes(query);
+          return triggerMatch || contentMatch || nameMatch;
+        }
       }
 
       return true;
@@ -580,15 +622,25 @@
     else if (item.category === 'Pihak Ke-3') catClass += 'cat-pihak3';
     else catClass += 'cat-custom';
 
-    // Highlight search match in text if query exists
+    // Highlight search match in text if query exists based on searchMode
     let displayContent = escapeHtml(item.content);
     let displayTrigger = escapeHtml(item.trigger);
 
     if (state.searchQuery.trim()) {
       const q = escapeRegExp(state.searchQuery.trim());
       const regex = new RegExp(`(${q})`, 'gi');
-      displayContent = displayContent.replace(regex, '<mark>$1</mark>');
-      displayTrigger = displayTrigger.replace(regex, '<mark>$1</mark>');
+
+      if (state.searchMode === 'trigger') {
+        // Hanya highlight trigger jika mode Khusus Trigger
+        displayTrigger = displayTrigger.replace(regex, '<mark>$1</mark>');
+      } else if (state.searchMode === 'content') {
+        // Hanya highlight isi kalimat jika mode Khusus Isi
+        displayContent = displayContent.replace(regex, '<mark>$1</mark>');
+      } else {
+        // Mode Semua: highlight keduanya
+        displayContent = displayContent.replace(regex, '<mark>$1</mark>');
+        displayTrigger = displayTrigger.replace(regex, '<mark>$1</mark>');
+      }
     }
 
     // Check if template contains placeholder 'xxx' or 'XXX'
@@ -1391,6 +1443,17 @@
       elements.searchInput.focus();
     });
 
+    // Search Mode Selection (Semua / Khusus Trigger / Khusus Isi)
+    if (elements.searchModeContainer) {
+      elements.searchModeContainer.addEventListener('click', (e) => {
+        const pill = e.target.closest('.search-mode-pill');
+        if (!pill) return;
+        const mode = pill.getAttribute('data-mode');
+        if (!mode || mode === state.searchMode) return;
+        setSearchMode(mode);
+      });
+    }
+
     // Category Tabs
     elements.categoriesContainer.addEventListener('click', (e) => {
       const pill = e.target.closest('.cat-pill');
@@ -1414,6 +1477,7 @@
       elements.searchInput.value = '';
       state.searchQuery = '';
       state.activeCategory = 'all';
+      setSearchMode('all');
       document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
       document.querySelector('.cat-pill[data-category="all"]').classList.add('active');
       elements.btnClearSearch.style.display = 'none';
