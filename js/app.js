@@ -6,18 +6,19 @@
 (function () {
   'use strict';
 
-  // Storage Keys (Template Master Kosong)
-  const STORAGE_KEY = 'PK_MASTER_TEMPLATES';
-  const STATS_KEY = 'PK_MASTER_STATS';
-
-  // Bersihkan cache peninggalan proyek lama jika ada di browser ini
-  try {
-    localStorage.removeItem('PK_VAULT_TEMPLATES');
-    localStorage.removeItem('PK_VAULT_STATS');
-    localStorage.removeItem('PK_PARAPAT_TEMPLATES');
-    localStorage.removeItem('PK_PARAPAT_STATS');
-    localStorage.removeItem('PK_FIREBASE_CONFIG');
-  } catch (e) {}
+  // Dynamic Storage Keys (Terisolasi per Workspace / User ID)
+  function getTemplateStorageKey() {
+    return window.WorkspaceManager ? window.WorkspaceManager.getStorageKey('TEMPLATES') : 'PK_MASTER_TEMPLATES';
+  }
+  function getStatsStorageKey() {
+    return window.WorkspaceManager ? window.WorkspaceManager.getStorageKey('STATS') : 'PK_MASTER_STATS';
+  }
+  function getPkFirebasePath() {
+    return window.WorkspaceManager ? window.WorkspaceManager.getFirebasePath('pk_templates') : 'pk_templates';
+  }
+  function getKeepFirebasePath() {
+    return window.WorkspaceManager ? window.WorkspaceManager.getFirebasePath('keep_notes') : 'keep_notes';
+  }
 
   // Application State
   const state = {
@@ -32,6 +33,7 @@
     currentPage: 1,
     pendingDeleteId: null,
     activeVariableTemplate: null,
+    pendingXmlTemplates: [],
     cloudSync: {
       isConfigured: false,
       isConnected: false,
@@ -51,6 +53,11 @@
     keepHeaderControls: document.getElementById('keep-header-controls'),
     viewPk: document.getElementById('view-pk'),
     viewKeep: document.getElementById('view-keep'),
+
+    // User Profile Pill & XML Button
+    btnUserProfile: document.getElementById('btn-user-profile'),
+    headerUserName: document.getElementById('header-user-name'),
+    btnOpenXml: document.getElementById('btn-open-xml'),
 
     // Header & Stats
     headerTotalCount: document.getElementById('header-total-count'),
@@ -132,6 +139,49 @@
     btnCancelDelete: document.getElementById('btn-cancel-delete'),
     btnConfirmDelete: document.getElementById('btn-confirm-delete'),
 
+    // User Auth Modal Elements
+    modalAuth: document.getElementById('modal-auth'),
+    btnCloseAuth: document.getElementById('btn-close-auth'),
+    btnCancelAuth: document.getElementById('btn-cancel-auth'),
+    authActiveView: document.getElementById('auth-active-view'),
+    authDisplayUsername: document.getElementById('auth-display-username'),
+    authCloudPath: document.getElementById('auth-cloud-path'),
+    btnLogoutUser: document.getElementById('btn-logout-user'),
+    btnCloseAuthActive: document.getElementById('btn-close-auth-active'),
+    formAuthLogin: document.getElementById('form-auth-login'),
+    authInputUserid: document.getElementById('auth-input-userid'),
+    authInputPassword: document.getElementById('auth-input-password'),
+    authRecentUsersBox: document.getElementById('auth-recent-users-box'),
+    authRecentUsersList: document.getElementById('auth-recent-users-list'),
+
+    // XML Modal Elements
+    modalXml: document.getElementById('modal-xml'),
+    btnCloseXml: document.getElementById('btn-close-xml'),
+    xmlTabImport: document.getElementById('xml-tab-import'),
+    xmlTabExport: document.getElementById('xml-tab-export'),
+    xmlViewImport: document.getElementById('xml-view-import'),
+    xmlViewExport: document.getElementById('xml-view-export'),
+    btnMethodFile: document.getElementById('btn-method-file'),
+    btnMethodPaste: document.getElementById('btn-method-paste'),
+    xmlFileContainer: document.getElementById('xml-file-container'),
+    xmlPasteContainer: document.getElementById('xml-paste-container'),
+    xmlDropzone: document.getElementById('xml-dropzone'),
+    xmlFileInput: document.getElementById('xml-file-input'),
+    xmlSelectedFileName: document.getElementById('xml-selected-file-name'),
+    xmlPasteTextarea: document.getElementById('xml-paste-textarea'),
+    btnPasteClipboard: document.getElementById('btn-paste-clipboard'),
+    btnParsePaste: document.getElementById('btn-parse-paste'),
+    xmlPreviewCard: document.getElementById('xml-preview-card'),
+    xmlPreviewCount: document.getElementById('xml-preview-count'),
+    xmlTargetUser: document.getElementById('xml-target-user'),
+    xmlPreviewCategories: document.getElementById('xml-preview-categories'),
+    xmlPreviewSampleList: document.getElementById('xml-preview-sample-list'),
+    btnXmlMerge: document.getElementById('btn-xml-merge'),
+    btnXmlReplace: document.getElementById('btn-xml-replace'),
+    xmlExportUser: document.getElementById('xml-export-user'),
+    xmlExportCount: document.getElementById('xml-export-count'),
+    btnDownloadXml: document.getElementById('btn-download-xml'),
+
     // Toast
     toast: document.getElementById('toast'),
     toastTitle: document.getElementById('toast-title'),
@@ -142,30 +192,44 @@
   let toastTimeout = null;
 
   // =========================================================================
-  // Initial Data Loading & Persistence
+  // Initial Data Loading & Persistence (Isolated per Workspace)
   // =========================================================================
   function initData() {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(getTemplateStorageKey());
       if (stored) {
         state.templates = JSON.parse(stored);
+        // Auto-sanitize jika ada template yang tersimpan dengan artefak raw HTML/macro
+        let needResave = false;
+        state.templates.forEach(t => {
+          if (t.content && (/^text#macro:/i.test(t.content) || /<html[\s\S]*?>/i.test(t.content))) {
+            if (window.XmlEngine && typeof window.XmlEngine.cleanMacroContent === 'function') {
+              t.content = window.XmlEngine.cleanMacroContent(t.content, t.trigger);
+              t.charCount = t.content.length;
+              needResave = true;
+            }
+          }
+        });
+        if (needResave) {
+          saveTemplates(false);
+        }
       } else if (window.DEFAULT_TEMPLATES && Array.isArray(window.DEFAULT_TEMPLATES)) {
         state.templates = [...window.DEFAULT_TEMPLATES];
-        saveTemplates();
+        saveTemplates(false);
       } else {
         state.templates = [];
       }
 
-      const storedStats = localStorage.getItem(STATS_KEY);
+      const storedStats = localStorage.getItem(getStatsStorageKey());
       if (storedStats) {
         const stats = JSON.parse(storedStats);
         state.totalCopiedCount = stats.totalCopiedCount || 0;
+      } else {
+        state.totalCopiedCount = 0;
       }
     } catch (e) {
-      console.error('Gagal memuat data dari localStorage, menggunakan data default:', e);
-      if (window.DEFAULT_TEMPLATES) {
-        state.templates = [...window.DEFAULT_TEMPLATES];
-      }
+      console.error('Gagal memuat data dari localStorage:', e);
+      state.templates = [];
     }
 
     updateCategoryCounts();
@@ -174,7 +238,7 @@
 
   function saveTemplates(pushToCloud = true) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.templates));
+      localStorage.setItem(getTemplateStorageKey(), JSON.stringify(state.templates));
       updateCategoryCounts();
       if (pushToCloud) {
         syncChangeToCloud();
@@ -187,7 +251,7 @@
 
   function saveStats() {
     try {
-      localStorage.setItem(STATS_KEY, JSON.stringify({
+      localStorage.setItem(getStatsStorageKey(), JSON.stringify({
         totalCopiedCount: state.totalCopiedCount
       }));
     } catch (e) {
@@ -272,15 +336,18 @@
       if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'inline-flex';
 
       // Detach previous listeners if exist
-      if (dbRefListener) {
-        db.ref('pk_templates').off('value', dbRefListener);
+      if (dbRefListener && state.cloudSync.attachedPkPath) {
+        db.ref(state.cloudSync.attachedPkPath).off('value', dbRefListener);
       }
-      if (dbKeepRefListener) {
-        db.ref('keep_notes').off('value', dbKeepRefListener);
+      if (dbKeepRefListener && state.cloudSync.attachedKeepPath) {
+        db.ref(state.cloudSync.attachedKeepPath).off('value', dbKeepRefListener);
       }
 
-      // Attach Realtime Listener for PK Templates
-      const tplRef = db.ref('pk_templates');
+      // Attach Realtime Listener for PK Templates (Isolated Workspace)
+      const pkPath = getPkFirebasePath();
+      state.cloudSync.attachedPkPath = pkPath;
+      const tplRef = db.ref(pkPath);
+
       dbRefListener = (snapshot) => {
         const val = snapshot.val();
         if (val && Array.isArray(val) && val.length > 0) {
@@ -308,8 +375,11 @@
         showToast('Koneksi Cloud Terputus', 'Periksa izin Rules di Firebase Console', 'error');
       });
 
-      // Attach Realtime Listener for KEEP Notes
-      const keepRef = db.ref('keep_notes');
+      // Attach Realtime Listener for KEEP Notes (Isolated Workspace)
+      const keepPath = getKeepFirebasePath();
+      state.cloudSync.attachedKeepPath = keepPath;
+      const keepRef = db.ref(keepPath);
+
       dbKeepRefListener = (snapshot) => {
         const val = snapshot.val();
         if (val && Array.isArray(val) && val.length > 0) {
@@ -319,7 +389,7 @@
         } else if (!val) {
           const initialKeep = (window.DEFAULT_KEEP_NOTES && Array.isArray(window.DEFAULT_KEEP_NOTES)) ? window.DEFAULT_KEEP_NOTES : [];
           if (initialKeep.length > 0) {
-            db.ref('keep_notes').set(initialKeep);
+            db.ref(keepPath).set(initialKeep);
           }
         }
       };
@@ -329,7 +399,7 @@
       window.FirebaseSync = {
         syncKeepNotes: (notes) => {
           if (state.cloudSync.db) {
-            state.cloudSync.db.ref('keep_notes').set(notes);
+            state.cloudSync.db.ref(getKeepFirebasePath()).set(notes);
           }
         }
       };
@@ -345,7 +415,7 @@
     const dataToSeed = state.templates.length > 0 ? state.templates : (window.DEFAULT_TEMPLATES || []);
     if (dataToSeed.length === 0) return;
     setSyncStatus('syncing', 'Mengunggah Data...');
-    state.cloudSync.db.ref('pk_templates').set(dataToSeed)
+    state.cloudSync.db.ref(getPkFirebasePath()).set(dataToSeed)
       .then(() => {
         setSyncStatus('online', 'Cloud Aktif');
         showToast('Cloud Berhasil Diinisialisasi! ✓', `${dataToSeed.length} template diunggah.`);
@@ -359,7 +429,7 @@
   function syncChangeToCloud() {
     if (!state.cloudSync.db) return;
     setSyncStatus('syncing', 'Menyimpan...');
-    state.cloudSync.db.ref('pk_templates').set(state.templates)
+    state.cloudSync.db.ref(getPkFirebasePath()).set(state.templates)
       .then(() => {
         setSyncStatus('online', 'Cloud Aktif');
       })
@@ -931,20 +1001,30 @@
   }
 
   function resetToOriginal() {
-    const confirmReset = confirm('PERINGATAN: Seluruh template dan catatan akan dikosongkan secara total. Lanjutkan?');
+    const confirmReset = confirm('PERINGATAN: Seluruh akun profil, template PK, dan catatan KEEP di localhost akan dihapus dan dikosongkan total (100% bersih). Lanjutkan?');
     if (!confirmReset) return;
 
-    state.templates = [];
-    saveTemplates(false);
-    applyFilters();
-    if (window.KeepManager && typeof window.KeepManager.setNotes === 'function') {
-      window.KeepManager.setNotes([], true);
+    if (window.WorkspaceManager && typeof window.WorkspaceManager.clearAllLocalData === 'function') {
+      window.WorkspaceManager.clearAllLocalData();
     }
     try {
-      localStorage.removeItem('PK_FIREBASE_CONFIG');
+      localStorage.clear();
     } catch (e) {}
+
+    state.templates = [];
+    state.filteredTemplates = [];
+    applyFilters();
+
+    if (window.KeepManager && typeof window.KeepManager.setNotes === 'function') {
+      window.KeepManager.setNotes([], false);
+    }
+
     elements.modalSettings.style.display = 'none';
-    showToast('Data Berhasil Dikosongkan! ✓', 'Semua data template dan catatan telah dibersihkan.');
+    showToast('Localhost Bersih 100%! ✓', 'Semua data akun dan template telah dikosongkan.');
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
 
   // =========================================================================
@@ -992,6 +1072,283 @@
         window.KeepManager.refresh();
       }
     }
+  }
+
+  // =========================================================================
+  // Multi-User Workspace & Auth UI Logic
+  // =========================================================================
+  function updateHeaderUserPill() {
+    if (!elements.btnUserProfile) return;
+    const isLogged = window.WorkspaceManager && window.WorkspaceManager.isLoggedIn();
+    if (isLogged) {
+      const userDisplay = window.WorkspaceManager.getCurrentUserDisplay();
+      if (elements.headerUserName) elements.headerUserName.textContent = userDisplay;
+      elements.btnUserProfile.classList.add('is-logged-in');
+    } else {
+      if (elements.headerUserName) elements.headerUserName.textContent = 'Masuk';
+      elements.btnUserProfile.classList.remove('is-logged-in');
+    }
+  }
+
+  function openAuthModal() {
+    if (!elements.modalAuth) return;
+    const isLogged = window.WorkspaceManager && window.WorkspaceManager.isLoggedIn();
+
+    if (isLogged) {
+      // Tampilkan view aktif
+      if (elements.authActiveView) elements.authActiveView.style.display = 'block';
+      if (elements.formAuthLogin) elements.formAuthLogin.style.display = 'none';
+
+      const userDisplay = window.WorkspaceManager.getCurrentUserDisplay();
+      if (elements.authDisplayUsername) elements.authDisplayUsername.textContent = userDisplay;
+      if (elements.authCloudPath) elements.authCloudPath.textContent = getPkFirebasePath();
+
+      const copyTexts = elements.modalAuth.querySelectorAll('.copy-user-id-text');
+      copyTexts.forEach(el => el.textContent = window.WorkspaceManager.getCurrentUser() || 'user');
+    } else {
+      // Tampilkan form login / pendaftaran
+      if (elements.authActiveView) elements.authActiveView.style.display = 'none';
+      if (elements.formAuthLogin) elements.formAuthLogin.style.display = 'block';
+
+      if (elements.authInputUserid) {
+        elements.authInputUserid.value = '';
+        setTimeout(() => elements.authInputUserid.focus(), 300);
+      }
+      if (elements.authInputPassword) {
+        elements.authInputPassword.value = window.WorkspaceManager ? window.WorkspaceManager.getMasterPassword() : '1';
+      }
+
+      renderRecentUsers();
+    }
+
+    elements.modalAuth.style.display = 'flex';
+  }
+
+  function renderRecentUsers() {
+    if (!elements.authRecentUsersBox || !elements.authRecentUsersList) return;
+    const list = window.WorkspaceManager ? window.WorkspaceManager.getRecentUsers() : [];
+
+    if (list.length === 0) {
+      elements.authRecentUsersBox.style.display = 'none';
+      elements.authRecentUsersList.innerHTML = '';
+      return;
+    }
+
+    elements.authRecentUsersBox.style.display = 'block';
+    elements.authRecentUsersList.innerHTML = list.map(u => `
+      <button type="button" class="recent-user-chip" data-user="${escapeHtml(u)}">
+        <span class="chip-avatar">👤</span>
+        <span class="chip-name">${escapeHtml(u.toUpperCase())}</span>
+      </button>
+    `).join('');
+
+    // Bind chip clicks
+    elements.authRecentUsersList.querySelectorAll('.recent-user-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const u = btn.getAttribute('data-user');
+        if (elements.authInputUserid) elements.authInputUserid.value = u;
+        if (elements.authInputPassword) elements.authInputPassword.value = '1';
+      });
+    });
+  }
+
+  function handleAuthSubmit(e) {
+    if (e) e.preventDefault();
+    const userId = elements.authInputUserid ? elements.authInputUserid.value.trim() : '';
+    const pass = elements.authInputPassword ? elements.authInputPassword.value.trim() : '';
+
+    if (!userId) {
+      alert('Silakan masukkan User ID Anda!');
+      return;
+    }
+
+    if (!window.WorkspaceManager) return;
+    const result = window.WorkspaceManager.login(userId, pass);
+
+    if (result.success) {
+      elements.modalAuth.style.display = 'none';
+      showToast('Ruang Kerja Dibuka! ✓', `Selamat datang, ${result.user.toUpperCase()}`);
+    } else {
+      alert(result.message);
+    }
+  }
+
+  function handleAuthLogout() {
+    if (!window.WorkspaceManager) return;
+    const confirmLogout = confirm('Keluar dari ruang kerja ini? Anda dapat masuk kembali kapan saja dengan User ID & password.');
+    if (!confirmLogout) return;
+
+    window.WorkspaceManager.logout();
+    showToast('Berhasil Keluar', 'Silakan masukkan User ID untuk ruang kerja baru.');
+    openAuthModal();
+  }
+
+  // =========================================================================
+  // Universal XML Engine UI Logic
+  // =========================================================================
+  function openXmlModal() {
+    if (!elements.modalXml) return;
+
+    // Pastikan user tahu target akun
+    const userDisplay = window.WorkspaceManager ? window.WorkspaceManager.getCurrentUserDisplay() : 'DEFAULT';
+    if (elements.xmlTargetUser) elements.xmlTargetUser.textContent = `Tujuan: ${userDisplay}`;
+    if (elements.xmlExportUser) elements.xmlExportUser.textContent = userDisplay;
+    if (elements.xmlExportCount) elements.xmlExportCount.textContent = `${state.templates.length} Template`;
+
+    // Reset preview
+    state.pendingXmlTemplates = [];
+    if (elements.xmlPreviewCard) elements.xmlPreviewCard.style.display = 'none';
+    if (elements.xmlSelectedFileName) {
+      elements.xmlSelectedFileName.style.display = 'none';
+      elements.xmlSelectedFileName.textContent = '';
+    }
+    if (elements.xmlPasteTextarea) elements.xmlPasteTextarea.value = '';
+
+    // Default to Import tab & File method
+    switchXmlTab('import');
+    switchXmlMethod('file');
+
+    elements.modalXml.style.display = 'flex';
+  }
+
+  function switchXmlTab(tab) {
+    if (!elements.xmlTabImport || !elements.xmlTabExport) return;
+
+    if (tab === 'export') {
+      elements.xmlTabImport.classList.remove('active');
+      elements.xmlTabExport.classList.add('active');
+      if (elements.xmlViewImport) elements.xmlViewImport.style.display = 'none';
+      if (elements.xmlViewExport) elements.xmlViewExport.style.display = 'block';
+
+      // Update export count
+      if (elements.xmlExportCount) elements.xmlExportCount.textContent = `${state.templates.length} Template`;
+    } else {
+      elements.xmlTabExport.classList.remove('active');
+      elements.xmlTabImport.classList.add('active');
+      if (elements.xmlViewExport) elements.xmlViewExport.style.display = 'none';
+      if (elements.xmlViewImport) elements.xmlViewImport.style.display = 'block';
+    }
+  }
+
+  function switchXmlMethod(method) {
+    if (!elements.btnMethodFile || !elements.btnMethodPaste) return;
+
+    if (method === 'paste') {
+      elements.btnMethodFile.classList.remove('active');
+      elements.btnMethodPaste.classList.add('active');
+      if (elements.xmlFileContainer) elements.xmlFileContainer.style.display = 'none';
+      if (elements.xmlPasteContainer) elements.xmlPasteContainer.style.display = 'block';
+    } else {
+      elements.btnMethodPaste.classList.remove('active');
+      elements.btnMethodFile.classList.add('active');
+      if (elements.xmlPasteContainer) elements.xmlPasteContainer.style.display = 'none';
+      if (elements.xmlFileContainer) elements.xmlFileContainer.style.display = 'block';
+    }
+  }
+
+  function processXmlString(xmlString, sourceLabel) {
+    if (!window.XmlEngine) {
+      alert('XmlEngine belum termuat.');
+      return;
+    }
+
+    const result = window.XmlEngine.parse(xmlString, { defaultCategory: 'Custom', filename: sourceLabel });
+    if (!result.success) {
+      alert('Gagal memproses XML:\n' + result.error);
+      return;
+    }
+
+    state.pendingXmlTemplates = result.templates;
+    displayXmlPreview(result, sourceLabel);
+  }
+
+  function displayXmlPreview(result, sourceLabel) {
+    if (!elements.xmlPreviewCard) return;
+
+    elements.xmlPreviewCard.style.display = 'block';
+    if (elements.xmlPreviewCount) {
+      elements.xmlPreviewCount.textContent = `✓ ${result.totalCount} Template Terdeteksi (${sourceLabel || 'XML'})`;
+    }
+
+    // Categories badges
+    if (elements.xmlPreviewCategories) {
+      elements.xmlPreviewCategories.innerHTML = result.categories.map(c => 
+        `<span class="xml-cat-pill">${escapeHtml(c)}</span>`
+      ).join('');
+    }
+
+    // Sample items (up to 4 items)
+    if (elements.xmlPreviewSampleList) {
+      const sample = result.templates.slice(0, 4);
+      elements.xmlPreviewSampleList.innerHTML = sample.map(item => `
+        <div class="xml-preview-item">
+          <div class="xml-item-top">
+            <span class="trigger-badge ${item.triggerType === 'hotkey' ? 'hotkey-badge' : (item.triggerType === 'none' ? 'no-trigger' : '')}">${escapeHtml(item.trigger)}</span>
+            <span class="cat-badge cat-custom">${escapeHtml(item.category)}</span>
+          </div>
+          <p class="xml-item-content">${escapeHtml(item.content.slice(0, 110))}${item.content.length > 110 ? '...' : ''}</p>
+        </div>
+      `).join('');
+
+      if (result.templates.length > 4) {
+        elements.xmlPreviewSampleList.innerHTML += `
+          <div class="xml-more-hint">+ ${result.templates.length - 4} template lainnya siap diimpor...</div>
+        `;
+      }
+    }
+
+    // Scroll to preview
+    elements.xmlPreviewCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function importXmlMerge() {
+    if (!state.pendingXmlTemplates || state.pendingXmlTemplates.length === 0) {
+      alert('Tidak ada template yang siap diimpor.');
+      return;
+    }
+
+    const count = state.pendingXmlTemplates.length;
+    // Gabungkan ke depan daftar
+    state.templates = [...state.pendingXmlTemplates, ...state.templates];
+    saveTemplates(true);
+    applyFilters();
+
+    elements.modalXml.style.display = 'none';
+    showToast('XML Berhasil Digabung! ✓', `${count} template ditambahkan ke akun Anda.`);
+  }
+
+  function importXmlReplace() {
+    if (!state.pendingXmlTemplates || state.pendingXmlTemplates.length === 0) {
+      alert('Tidak ada template yang siap diimpor.');
+      return;
+    }
+
+    const count = state.pendingXmlTemplates.length;
+    const confirmRep = confirm(`PERINGATAN: Seluruh template lama di akun Anda akan diganti dengan ${count} template dari XML ini. Lanjutkan?`);
+    if (!confirmRep) return;
+
+    state.templates = [...state.pendingXmlTemplates];
+    saveTemplates(true);
+    applyFilters();
+
+    elements.modalXml.style.display = 'none';
+    showToast('XML Berhasil Diimpor! ✓', `${count} template baru telah menggantikan data lama.`);
+  }
+
+  function exportXmlDownload() {
+    if (!window.XmlEngine) return;
+    if (state.templates.length === 0) {
+      alert('Tidak ada template untuk diekspor!');
+      return;
+    }
+
+    const xmlStr = window.XmlEngine.generate(state.templates);
+    const user = window.WorkspaceManager ? window.WorkspaceManager.getCurrentUser() : 'vault';
+    const now = new Date().toISOString().slice(0, 10);
+    const filename = `PK_Export_${user}_${now}.xml`;
+
+    window.XmlEngine.download(xmlStr, filename);
+    showToast('File XML Diunduh! ✓', `${state.templates.length} template diekspor ke format Perfect Keyboard PC.`);
   }
 
   // =========================================================================
@@ -1097,6 +1454,12 @@
 
     // Variable Modal Events
     elements.varInputValue.addEventListener('input', updateVariablePreview);
+    elements.varInputValue.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        copyVariableResult();
+      }
+    });
     elements.btnCopyVariable.addEventListener('click', copyVariableResult);
     elements.btnCloseVariable.addEventListener('click', () => elements.modalVariable.style.display = 'none');
     elements.btnCancelVariable.addEventListener('click', () => elements.modalVariable.style.display = 'none');
@@ -1137,6 +1500,15 @@
       elements.modalSettings.style.display = 'flex';
     });
     elements.btnCloseSettings.addEventListener('click', () => elements.modalSettings.style.display = 'none');
+    
+    const btnSettingsOpenXml = document.getElementById('btn-settings-open-xml');
+    if (btnSettingsOpenXml) {
+      btnSettingsOpenXml.addEventListener('click', () => {
+        elements.modalSettings.style.display = 'none';
+        openXmlModal();
+      });
+    }
+
     elements.btnExportJson.addEventListener('click', exportBackup);
     elements.fileImportJson.addEventListener('change', (e) => {
       if (e.target.files && e.target.files[0]) {
@@ -1144,6 +1516,138 @@
       }
     });
     elements.btnResetOriginal.addEventListener('click', resetToOriginal);
+
+    // =========================================================================
+    // User Profile / Auth Events
+    // =========================================================================
+    if (elements.btnUserProfile) {
+      elements.btnUserProfile.addEventListener('click', openAuthModal);
+    }
+    if (elements.btnCloseAuth) {
+      elements.btnCloseAuth.addEventListener('click', () => elements.modalAuth.style.display = 'none');
+    }
+    if (elements.btnCancelAuth) {
+      elements.btnCancelAuth.addEventListener('click', () => elements.modalAuth.style.display = 'none');
+    }
+    if (elements.btnCloseAuthActive) {
+      elements.btnCloseAuthActive.addEventListener('click', () => elements.modalAuth.style.display = 'none');
+    }
+    if (elements.formAuthLogin) {
+      elements.formAuthLogin.addEventListener('submit', handleAuthSubmit);
+    }
+    if (elements.btnLogoutUser) {
+      elements.btnLogoutUser.addEventListener('click', handleAuthLogout);
+    }
+
+    // =========================================================================
+    // XML Engine Events
+    // =========================================================================
+    if (elements.btnOpenXml) {
+      elements.btnOpenXml.addEventListener('click', openXmlModal);
+    }
+    if (elements.btnCloseXml) {
+      elements.btnCloseXml.addEventListener('click', () => elements.modalXml.style.display = 'none');
+    }
+    if (elements.xmlTabImport) {
+      elements.xmlTabImport.addEventListener('click', () => switchXmlTab('import'));
+    }
+    if (elements.xmlTabExport) {
+      elements.xmlTabExport.addEventListener('click', () => switchXmlTab('export'));
+    }
+    if (elements.btnMethodFile) {
+      elements.btnMethodFile.addEventListener('click', () => switchXmlMethod('file'));
+    }
+    if (elements.btnMethodPaste) {
+      elements.btnMethodPaste.addEventListener('click', () => switchXmlMethod('paste'));
+    }
+
+    // File Dropzone & Input
+    if (elements.xmlFileInput) {
+      elements.xmlFileInput.addEventListener('change', (e) => {
+        const file = e.target.files ? e.target.files[0] : null;
+        if (!file) return;
+
+        if (elements.xmlSelectedFileName) {
+          elements.xmlSelectedFileName.style.display = 'block';
+          elements.xmlSelectedFileName.textContent = `📄 ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          processXmlString(evt.target.result, file.name);
+        };
+        reader.readAsText(file, 'utf-8');
+      });
+    }
+
+    if (elements.xmlDropzone) {
+      elements.xmlDropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        elements.xmlDropzone.classList.add('drag-over');
+      });
+      elements.xmlDropzone.addEventListener('dragleave', () => {
+        elements.xmlDropzone.classList.remove('drag-over');
+      });
+      elements.xmlDropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        elements.xmlDropzone.classList.remove('drag-over');
+        const file = e.dataTransfer.files ? e.dataTransfer.files[0] : null;
+        if (file) {
+          if (elements.xmlSelectedFileName) {
+            elements.xmlSelectedFileName.style.display = 'block';
+            elements.xmlSelectedFileName.textContent = `📄 ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+          }
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            processXmlString(evt.target.result, file.name);
+          };
+          reader.readAsText(file, 'utf-8');
+        }
+      });
+    }
+
+    // Paste & Clipboard
+    if (elements.btnPasteClipboard) {
+      elements.btnPasteClipboard.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && navigator.clipboard.readText) {
+            const clipText = await navigator.clipboard.readText();
+            if (elements.xmlPasteTextarea) {
+              elements.xmlPasteTextarea.value = clipText;
+              showToast('Teks Ditempel', `${clipText.length} karakter.`);
+            }
+          } else {
+            alert('Gunakan Ctrl+V / tempel manual pada kotak teks.');
+          }
+        } catch (e) {
+          alert('Tidak dapat membaca clipboard otomatis. Silakan tempel (Ctrl+V) langsung ke kotak teks.');
+        }
+      });
+    }
+
+    if (elements.btnParsePaste) {
+      elements.btnParsePaste.addEventListener('click', () => {
+        const text = elements.xmlPasteTextarea ? elements.xmlPasteTextarea.value.trim() : '';
+        if (!text) {
+          alert('Silakan tempelkan teks XML terlebih dahulu!');
+          return;
+        }
+        processXmlString(text, 'Teks Paste');
+      });
+    }
+
+    // Merge & Replace Actions
+    if (elements.btnXmlMerge) {
+      elements.btnXmlMerge.addEventListener('click', importXmlMerge);
+    }
+    if (elements.btnXmlReplace) {
+      elements.btnXmlReplace.addEventListener('click', importXmlReplace);
+    }
+
+    // Export Download Button
+    if (elements.btnDownloadXml) {
+      elements.btnDownloadXml.addEventListener('click', exportXmlDownload);
+    }
 
     // Cloud Sync Settings Events
     if (elements.btnSaveCloud) {
@@ -1190,8 +1694,8 @@
         if (!confirmDisc) return;
 
         localStorage.removeItem('PK_FIREBASE_CONFIG');
-        if (state.cloudSync.db && dbRefListener) {
-          state.cloudSync.db.ref('pk_templates').off('value', dbRefListener);
+        if (state.cloudSync.db && dbRefListener && state.cloudSync.attachedPkPath) {
+          state.cloudSync.db.ref(state.cloudSync.attachedPkPath).off('value', dbRefListener);
         }
         state.cloudSync.db = null;
         state.cloudSync.isConfigured = false;
@@ -1205,12 +1709,21 @@
     }
 
     // Close Modals when clicking on backdrop
-    [elements.modalTemplate, elements.modalVariable, elements.modalSettings, elements.modalDelete].forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
+    [
+      elements.modalTemplate, 
+      elements.modalVariable, 
+      elements.modalSettings, 
+      elements.modalDelete, 
+      elements.modalAuth, 
+      elements.modalXml
+    ].forEach(modal => {
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      }
     });
 
     // Scroll to Top Button
@@ -1228,12 +1741,34 @@
   }
 
   // =========================================================================
+  // Workspace Manager Event Integration
+  // =========================================================================
+  if (window.WorkspaceManager && typeof window.WorkspaceManager.onAuthChange === 'function') {
+    window.WorkspaceManager.onAuthChange((newUserId) => {
+      updateHeaderUserPill();
+      initData();
+      initCloudSync();
+      if (window.KeepManager && typeof window.KeepManager.reload === 'function') {
+        window.KeepManager.reload();
+      }
+    });
+  }
+
+  // =========================================================================
   // Initialize Application
   // =========================================================================
   document.addEventListener('DOMContentLoaded', () => {
+    updateHeaderUserPill();
     initData();
     initCloudSync();
     setupEvents();
+
+    // Jika belum login di browser ini, tampilkan prompt User ID ramah
+    if (window.WorkspaceManager && !window.WorkspaceManager.isLoggedIn()) {
+      setTimeout(() => {
+        openAuthModal();
+      }, 350);
+    }
   });
 
 })();

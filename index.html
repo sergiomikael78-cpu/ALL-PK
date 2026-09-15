@@ -55,6 +55,17 @@
         </div>
 
         <div class="header-actions">
+          <!-- User Profile Switcher Button -->
+          <button id="btn-user-profile" class="user-pill-btn" title="Akun & Ruang Kerja Pengguna" aria-label="Akun Pengguna">
+            <span class="user-pill-avatar">👤</span>
+            <span id="header-user-name" class="user-pill-name">Masuk</span>
+          </button>
+
+          <!-- XML Engine Button -->
+          <button id="btn-open-xml" class="icon-btn btn-xml-badge" title="Universal XML Engine (Import / Export)" aria-label="XML Engine">
+            <span class="btn-xml-tag">XML</span>
+          </button>
+
           <button id="btn-stats" class="icon-btn" title="Statistik & Informasi" aria-label="Statistik">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 20V10"></path>
@@ -627,6 +638,21 @@
             </div>
           </div>
 
+          <!-- XML Featured Card in Settings -->
+          <div class="settings-card xml-featured-card" style="border: 1px solid rgba(0, 242, 254, 0.4); background: linear-gradient(135deg, rgba(0, 242, 254, 0.08) 0%, rgba(14, 20, 36, 0.9) 100%);">
+            <div class="settings-info">
+              <div class="cloud-header-status" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <h4 style="color: var(--cyber-cyan);">📥 Impor &amp; Ekspor File .XML (Perfect Keyboard)</h4>
+                <span class="badge-status-pill pill-online">Format .XML</span>
+              </div>
+              <p>Membaca dan memasukkan file .xml langsung dari software Pitrinec Perfect Keyboard PC, lengkap dengan pembagian grup kategori &amp; trigger otomatis.</p>
+            </div>
+            <button type="button" id="btn-settings-open-xml" class="btn-save" style="width: 100%; justify-content: center; margin-top: 10px; padding: 10px 16px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Buka Menu Input File .XML</span>
+            </button>
+          </div>
+
           <div class="settings-card">
             <div class="settings-info">
               <h4>Ekspor Cadangan (Backup JSON)</h4>
@@ -687,6 +713,267 @@
               <span class="stat-title">Favorit</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet Modal: Akun Pengguna & Ruang Kerja Multi-User -->
+    <div id="modal-auth" class="modal-overlay" style="display: none;">
+      <div class="bottom-sheet auth-sheet">
+        <div class="sheet-handle-bar"><div class="sheet-handle"></div></div>
+        <div class="sheet-header">
+          <div class="sheet-title-group">
+            <span class="sheet-tag tag-cyan">MULTI-USER WORKSPACE</span>
+            <h2 class="sheet-title" id="auth-modal-title">Akun &amp; Ruang Kerja</h2>
+          </div>
+          <button class="sheet-close-btn" id="btn-close-auth">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="sheet-body">
+          <!-- Active User Info Card (shown when logged in) -->
+          <div id="auth-active-view" style="display: none;">
+            <div class="active-user-card">
+              <div class="user-avatar-large">👤</div>
+              <div class="user-details-box">
+                <span class="user-badge-role">AKUN AKTIF</span>
+                <h3 class="user-active-name" id="auth-display-username">BUDI</h3>
+                <p class="user-active-desc">Database cloud &amp; lokal terhubung ke ruang kerja ini.</p>
+              </div>
+            </div>
+
+            <div class="auth-sync-info-box">
+              <div class="sync-info-item">
+                <span class="sync-info-label">Ruang Kerja Cloud:</span>
+                <code id="auth-cloud-path" class="sync-info-code">workspaces/budi/</code>
+              </div>
+              <p class="auth-hint-text">
+                💡 <b>Tips Pindah HP:</b> Di HP atau laptop lain, Anda cukup memasukkan User ID <code><span class="copy-user-id-text">budi</span></code> dan password <code>1</code> untuk mengakses data ini secara otomatis!
+              </p>
+            </div>
+
+            <div class="sheet-actions" style="margin-top: 16px;">
+              <button type="button" id="btn-logout-user" class="btn-danger-outline" style="flex: 1;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Keluar / Ganti Akun</span>
+              </button>
+              <button type="button" class="btn-cancel" id="btn-close-auth-active">Tutup</button>
+            </div>
+          </div>
+
+          <!-- Login / Register Form (shown when logged out or switching) -->
+          <form id="form-auth-login" style="display: block;">
+            <div class="auth-intro-box">
+              <p>Masukkan <b>User ID</b> Anda untuk membuka atau mendaftar ruang kerja pribadi. Data Anda 100% terpisah dari staf lain.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="auth-input-userid" class="form-label">
+                <span>User ID (Nama / Kode CS):</span>
+                <span class="label-hint">contoh: budi, cs01, siti</span>
+              </label>
+              <input 
+                type="text" 
+                id="auth-input-userid" 
+                class="form-input font-mono" 
+                placeholder="misal: budi"
+                autocomplete="username" 
+                autocapitalize="none"
+                spellcheck="false"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="auth-input-password" class="form-label">
+                <span>Password (Seragam):</span>
+                <span class="label-hint">Ditetapkan: 1</span>
+              </label>
+              <div class="password-input-wrap">
+                <input 
+                  type="text" 
+                  id="auth-input-password" 
+                  class="form-input font-mono" 
+                  value="1"
+                  autocomplete="current-password"
+                  required
+                >
+                <span class="password-fixed-badge">Default: 1</span>
+              </div>
+              <span class="form-help-text">Password seragam untuk seluruh tim adalah angka <b>1</b>.</span>
+            </div>
+
+            <!-- Recent Users on this device (Fast 1-tap Switch) -->
+            <div id="auth-recent-users-box" class="recent-users-box" style="display: none;">
+              <span class="recent-users-title">Pilih Akun yang Pernah Masuk di HP Ini:</span>
+              <div id="auth-recent-users-list" class="recent-users-chips"></div>
+            </div>
+
+            <div class="sheet-actions" style="margin-top: 20px;">
+              <button type="button" class="btn-cancel" id="btn-cancel-auth">Batal</button>
+              <button type="submit" class="btn-save" id="btn-submit-auth">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                  <polyline points="10 17 15 12 10 7"></polyline>
+                  <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                <span>Masuk ke Ruang Kerja</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet Modal: Universal XML Engine (Perfect Keyboard) -->
+    <div id="modal-xml" class="modal-overlay" style="display: none;">
+      <div class="bottom-sheet xml-sheet">
+        <div class="sheet-handle-bar"><div class="sheet-handle"></div></div>
+        <div class="sheet-header">
+          <div class="sheet-title-group">
+            <span class="sheet-tag tag-cyan">NATIVE ENGINE</span>
+            <h2 class="sheet-title">Universal XML Perfect Keyboard</h2>
+          </div>
+          <button class="sheet-close-btn" id="btn-close-xml">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="sheet-body">
+          <!-- Navigation Tabs: [📥 Impor XML] vs [📤 Ekspor XML] -->
+          <div class="xml-nav-tabs">
+            <button type="button" class="xml-tab-btn active" id="xml-tab-import" data-tab="import">
+              📥 Impor .XML ke Akun
+            </button>
+            <button type="button" class="xml-tab-btn" id="xml-tab-export" data-tab="export">
+              📤 Ekspor Akun ke .XML
+            </button>
+          </div>
+
+          <!-- VIEW 1: IMPORT XML -->
+          <div id="xml-view-import" class="xml-tab-content">
+            <!-- Mode Input: File vs Paste -->
+            <div class="xml-input-method-toggle">
+              <button type="button" class="method-toggle-btn active" id="btn-method-file">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                <span>Upload File .XML</span>
+              </button>
+              <button type="button" class="method-toggle-btn" id="btn-method-paste">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                <span>Paste Kode XML</span>
+              </button>
+            </div>
+
+            <!-- Dropzone Container -->
+            <div id="xml-file-container">
+              <div id="xml-dropzone" class="xml-dropzone">
+                <div class="dropzone-icon">📁</div>
+                <h4 class="dropzone-title">Seret &amp; Lepas File .xml di sini</h4>
+                <p class="dropzone-desc">Mendukung file export Pitrinec Perfect Keyboard / Macro Commander</p>
+                <label for="xml-file-input" class="btn-secondary" style="cursor: pointer; display: inline-flex; margin-top: 8px;">
+                  <span>Telusuri File .XML</span>
+                  <input type="file" id="xml-file-input" accept=".xml,text/xml" style="display: none;">
+                </label>
+                <div id="xml-selected-file-name" class="selected-file-name" style="display: none;"></div>
+              </div>
+            </div>
+
+            <!-- Paste Container -->
+            <div id="xml-paste-container" style="display: none;">
+              <div class="form-group">
+                <label for="xml-paste-textarea" class="form-label">
+                  <span>Tempelkan Teks / Kode XML:</span>
+                  <button type="button" id="btn-paste-clipboard" class="btn-tiny-action">Tempel dari Clipboard</button>
+                </label>
+                <textarea 
+                  id="xml-paste-textarea" 
+                  class="form-input font-mono xml-textarea" 
+                  placeholder="&lt;?xml version=&quot;1.0&quot;?&gt;&#10;&lt;macro_file&gt;&#10;  &lt;group name=&quot;Deposit&quot;&gt;&#10;    &lt;macro name=&quot;Rekening BCA&quot; shortcut=&quot;bca/&quot;&gt;&#10;      &lt;text&gt;Silakan transfer ke BCA ...&lt;/text&gt;&#10;    &lt;/macro&gt;&#10;  &lt;/group&gt;&#10;&lt;/macro_file&gt;"
+                  rows="6"
+                  spellcheck="false"
+                ></textarea>
+              </div>
+              <button type="button" id="btn-parse-paste" class="btn-primary-small" style="width: 100%; justify-content: center;">
+                <span>Analisis Kode XML</span>
+              </button>
+            </div>
+
+            <!-- Parsing Preview Card -->
+            <div id="xml-preview-card" class="xml-preview-card" style="display: none;">
+              <div class="preview-header">
+                <div class="preview-header-left">
+                  <span class="preview-status-tag">HASIL ANALISIS</span>
+                  <h4 class="preview-title" id="xml-preview-count">0 Template Terdeteksi</h4>
+                </div>
+                <span class="preview-user-target" id="xml-target-user">Tujuan: BUDI</span>
+              </div>
+
+              <!-- Categories detected list -->
+              <div class="preview-categories-row">
+                <span class="preview-categories-label">Kategori Otomatis:</span>
+                <div id="xml-preview-categories" class="preview-categories-tags"></div>
+              </div>
+
+              <!-- Preview Table / Sample Items -->
+              <div class="preview-items-list" id="xml-preview-sample-list"></div>
+
+              <!-- Action Choice: Merge or Replace -->
+              <div class="xml-actions-choice">
+                <p class="xml-choice-desc">Pilih cara memasukkan ke akun Anda saat ini:</p>
+                <div class="xml-actions-buttons">
+                  <button type="button" id="btn-xml-merge" class="btn-save">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <span>Gabungkan (Merge)</span>
+                  </button>
+                  <button type="button" id="btn-xml-replace" class="btn-danger-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                    <span>Ganti Semua (Replace)</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIEW 2: EXPORT XML -->
+          <div id="xml-view-export" class="xml-tab-content" style="display: none;">
+            <div class="xml-export-card">
+              <div class="export-icon-badge">📤</div>
+              <h4>Ekspor ke Format Asli Perfect Keyboard PC</h4>
+              <p>Unduh seluruh template di akun Anda saat ini menjadi file <code>.xml</code> resmi yang dapat langsung di-impor pada software <b>Pitrinec Perfect Keyboard</b> di Windows PC.</p>
+              
+              <div class="export-meta-box">
+                <div class="export-meta-item">
+                  <span class="meta-label">Akun Pemilik:</span>
+                  <span class="meta-value font-mono" id="xml-export-user">BUDI</span>
+                </div>
+                <div class="export-meta-item">
+                  <span class="meta-label">Total Template:</span>
+                  <span class="meta-value font-bold" id="xml-export-count">0 Template</span>
+                </div>
+              </div>
+
+              <button type="button" id="btn-download-xml" class="btn-save" style="width: 100%; justify-content: center; padding: 12px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh File .XML Sekarang</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -891,6 +1178,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script src="js/firebase-config.js"></script>
+
+  <!-- Workspace Multi-User & Universal XML Engine -->
+  <script src="js/workspace.js"></script>
+  <script src="js/xml-parser.js"></script>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>

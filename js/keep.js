@@ -7,7 +7,9 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'PK_KEEP_DATA';
+  function getKeepStorageKey() {
+    return window.WorkspaceManager ? window.WorkspaceManager.getStorageKey('KEEP_DATA') : 'PK_KEEP_DATA';
+  }
   const VIEW_MODE_KEY = 'PK_KEEP_VIEW_MODE';
 
   // Bersihkan cache peninggalan proyek lama
@@ -151,7 +153,7 @@
   // =========================================================================
   function initKeepData() {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(getKeepStorageKey());
       if (stored) {
         keepState.notes = JSON.parse(stored);
         // Ensure every note has a clean responses array (clean legacy dashed lines)
@@ -179,7 +181,7 @@
 
   function saveKeepNotes(pushToCloud = true) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(keepState.notes));
+      localStorage.setItem(getKeepStorageKey(), JSON.stringify(keepState.notes));
       updateLabelsCounts();
       if (pushToCloud) {
         syncKeepToCloud();
@@ -1578,8 +1580,17 @@
     openAddModal: function () {
       expandQuickNote();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    reload: function () {
+      initKeepData();
     }
   };
+
+  if (window.WorkspaceManager && typeof window.WorkspaceManager.onAuthChange === 'function') {
+    window.WorkspaceManager.onAuthChange(() => {
+      initKeepData();
+    });
+  }
 
   document.addEventListener('DOMContentLoaded', () => {
     window.KeepManager.init();
