@@ -3,8 +3,8 @@
  */
 
 window.FIREBASE_CONFIG = {
-  databaseURL: "https://pk-parapat-default-rtdb.firebaseio.com",
-  projectId: "pk-parapat"
+  databaseURL: "",
+  projectId: ""
 };
 
 // Fungsi pembantu untuk membaca konfigurasi (dari file atau dari LocalStorage jika diatur via UI)

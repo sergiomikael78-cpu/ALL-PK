@@ -6,14 +6,16 @@
 (function () {
   'use strict';
 
-  // Storage Keys (PK PARAPAT)
-  const STORAGE_KEY = 'PK_PARAPAT_TEMPLATES';
-  const STATS_KEY = 'PK_PARAPAT_STATS';
+  // Storage Keys (Template Master Kosong)
+  const STORAGE_KEY = 'PK_MASTER_TEMPLATES';
+  const STATS_KEY = 'PK_MASTER_STATS';
 
   // Bersihkan cache peninggalan proyek lama jika ada di browser ini
   try {
     localStorage.removeItem('PK_VAULT_TEMPLATES');
     localStorage.removeItem('PK_VAULT_STATS');
+    localStorage.removeItem('PK_PARAPAT_TEMPLATES');
+    localStorage.removeItem('PK_PARAPAT_STATS');
     localStorage.removeItem('PK_FIREBASE_CONFIG');
   } catch (e) {}
 
@@ -66,8 +68,6 @@
     categoriesContainer: document.getElementById('categories-container'),
     countAll: document.getElementById('count-all'),
     countPinned: document.getElementById('count-pinned'),
-    countParapat1: document.getElementById('count-parapat1'),
-    countParapat2: document.getElementById('count-parapat2'),
 
     // Filter & Sort Bar
     resultsCountText: document.getElementById('results-count-text'),
@@ -374,20 +374,16 @@
   // =========================================================================
   function updateCategoryCounts() {
     const total = state.templates.length;
-    let pinned = 0, parapat1 = 0, parapat2 = 0;
+    let pinned = 0;
 
     state.templates.forEach(t => {
       if (t.isPinned) pinned++;
-      if (t.category === 'Parapat 1') parapat1++;
-      else if (t.category === 'Parapat 2') parapat2++;
     });
 
     if (elements.headerTotalCount) elements.headerTotalCount.textContent = total;
     if (elements.tabPkCount) elements.tabPkCount.textContent = total;
     if (elements.countAll) elements.countAll.textContent = total;
     if (elements.countPinned) elements.countPinned.textContent = pinned;
-    if (elements.countParapat1) elements.countParapat1.textContent = parapat1;
-    if (elements.countParapat2) elements.countParapat2.textContent = parapat2;
 
     // Also update settings stats
     if (elements.statTotal) elements.statTotal.textContent = total;
