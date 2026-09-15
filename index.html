@@ -66,15 +66,7 @@
             <span class="btn-xml-tag">XML</span>
           </button>
 
-          <button id="btn-stats" class="icon-btn" title="Statistik & Informasi" aria-label="Statistik">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 20V10"></path>
-              <path d="M12 20V4"></path>
-              <path d="M6 20v-6"></path>
-            </svg>
-          </button>
-          
-          <button id="btn-settings" class="icon-btn" title="Backup & Penyimpanan" aria-label="Pengaturan">
+          <button id="btn-settings" class="icon-btn" title="Penyimpanan & Cadangan" aria-label="Penyimpanan & Cadangan">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
               <polyline points="17 21 17 13 7 13 7 21"></polyline>
@@ -591,66 +583,129 @@
               <p>Hubungkan ke Firebase Realtime Database agar tambah/edit di HP langsung muncul otomatis di Laptop seketika!</p>
             </div>
             
-            <div class="form-group cloud-input-group">
-              <label for="input-firebase-url" class="form-label">
-                <span>Firebase Database URL</span>
-                <span class="label-hint">Realtime DB URL</span>
-              </label>
-              <input 
-                type="url" 
-                id="input-firebase-url" 
-                class="form-input font-mono" 
-                placeholder="https://proyek-anda-default-rtdb.firebaseio.com"
-                autocomplete="off"
-              >
+            <!-- Tampilan Terproteksi / Sensor (Default) -->
+            <div id="cloud-config-locked-view" class="cloud-security-box">
+              <div class="security-card-header">
+                <div class="security-status-badge">
+                  <span class="security-badge-icon">🔒</span>
+                  <span class="security-badge-title">Konfigurasi Database Terproteksi</span>
+                </div>
+                <button type="button" id="btn-show-unlock-cloud" class="btn-unlock-badge" title="Buka Kunci Konfigurasi dengan Password smj">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
+                  <span>Buka Kunci</span>
+                </button>
+              </div>
+
+              <div class="security-mask-row">
+                <span class="security-mask-label">Firebase Database URL:</span>
+                <span class="security-mask-dots">••••••••••••••••••••••••••••••••••••••••</span>
+              </div>
+
+              <!-- Password Prompt Panel (Muncul saat tombol Buka Kunci ditekan) -->
+              <div id="cloud-unlock-prompt-panel" class="security-prompt-panel" style="display: none;">
+                <div class="prompt-prompt-desc">Masukkan password untuk membuka sensor URL database:</div>
+                <div class="prompt-input-row">
+                  <input 
+                    type="password" 
+                    id="input-unlock-cloud-password" 
+                    class="form-input font-mono prompt-security-input" 
+                    placeholder="Password..." 
+                    autocomplete="off"
+                  >
+                  <button type="button" id="btn-verify-unlock-cloud" class="btn-primary-small">
+                    <span>Buka</span>
+                  </button>
+                  <button type="button" id="btn-cancel-unlock-cloud" class="btn-cancel" style="padding: 6px 12px;">
+                    <span>Batal</span>
+                  </button>
+                </div>
+                <div id="cloud-unlock-err-msg" class="security-error-text" style="display: none;">
+                  Password salah! Akses konfigurasi ditolak.
+                </div>
+              </div>
+
+              <!-- Tombol Sinkron Sekarang tetap bisa diakses saat terkunci -->
+              <div class="cloud-actions-row" style="margin-top: 8px;">
+                <button type="button" id="btn-sync-now-locked" class="btn-secondary btn-sync-action" style="display:none;">
+                  <span>🔄 Sinkron Sekarang</span>
+                </button>
+              </div>
             </div>
 
-            <div class="form-group cloud-input-group">
-              <label for="input-firebase-apikey" class="form-label">
-                <span>API Key (Opsional jika Rules Public)</span>
-              </label>
-              <input 
-                type="text" 
-                id="input-firebase-apikey" 
-                class="form-input font-mono" 
-                placeholder="AIzaSy..."
-                autocomplete="off"
-              >
-            </div>
-            
-            <div class="cloud-actions-row">
-              <button type="button" id="btn-save-cloud" class="btn-primary-small">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                <span>Hubungkan Cloud</span>
-              </button>
-              <button type="button" id="btn-sync-now" class="btn-secondary btn-sync-action" style="display:none;">
-                <span>🔄 Sinkron Sekarang</span>
-              </button>
-              <button type="button" id="btn-disconnect-cloud" class="btn-cancel btn-disconnect-action" style="display:none;">
-                <span>Putus Koneksi</span>
-              </button>
-            </div>
+            <!-- Tampilan Pengaturan Terbuka (Hanya tampil setelah verifikasi password 'smj') -->
+            <div id="cloud-config-unlocked-view" class="cloud-unlocked-box" style="display: none;">
+              <div class="security-card-header unlocked-bar">
+                <div class="security-status-badge unlocked">
+                  <span class="security-badge-icon">🔓</span>
+                  <span class="security-badge-title">Pengaturan Database Terbuka</span>
+                </div>
+                <button type="button" id="btn-relock-cloud" class="btn-relock-badge" title="Kunci Kembali URL Database">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>Kunci Kembali</span>
+                </button>
+              </div>
 
-            <div class="cloud-guide-box">
-              <details class="guide-details">
-                <summary class="guide-summary">📖 Panduan 2 Menit Membuat Firebase Database Gratis</summary>
-                <div class="guide-steps">
-                  <ol>
-                    <li>Buka <b>console.firebase.google.com</b> &amp; klik <b>"Add project"</b> (contoh nama: <code>pk-matrix-sync</code>).</li>
-                    <li>Di menu samping kiri, klik <b>Build</b> &gt; <b>Realtime Database</b> &gt; klik <b>Create Database</b>.</li>
-                    <li>Di tab <b>Rules</b>, ubah kodenya menjadi:<br>
-                      <pre class="code-snippet"><code>{
+              <div class="form-group cloud-input-group">
+                <label for="input-firebase-url" class="form-label">
+                  <span>Firebase Database URL</span>
+                  <span class="label-hint">Realtime DB URL</span>
+                </label>
+                <input 
+                  type="url" 
+                  id="input-firebase-url" 
+                  class="form-input font-mono" 
+                  placeholder="https://proyek-anda-default-rtdb.firebaseio.com"
+                  autocomplete="off"
+                >
+              </div>
+
+              <div class="form-group cloud-input-group">
+                <label for="input-firebase-apikey" class="form-label">
+                  <span>API Key (Opsional jika Rules Public)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="input-firebase-apikey" 
+                  class="form-input font-mono" 
+                  placeholder="AIzaSy..."
+                  autocomplete="off"
+                >
+              </div>
+              
+              <div class="cloud-actions-row">
+                <button type="button" id="btn-save-cloud" class="btn-primary-small">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                  <span>Hubungkan Cloud</span>
+                </button>
+                <button type="button" id="btn-sync-now" class="btn-secondary btn-sync-action" style="display:none;">
+                  <span>🔄 Sinkron Sekarang</span>
+                </button>
+                <button type="button" id="btn-disconnect-cloud" class="btn-cancel btn-disconnect-action" style="display:none;">
+                  <span>Putus Koneksi</span>
+                </button>
+              </div>
+
+              <div class="cloud-guide-box">
+                <details class="guide-details">
+                  <summary class="guide-summary">📖 Panduan 2 Menit Membuat Firebase Database Gratis</summary>
+                  <div class="guide-steps">
+                    <ol>
+                      <li>Buka <b>console.firebase.google.com</b> &amp; klik <b>"Add project"</b> (contoh nama: <code>pk-matrix-sync</code>).</li>
+                      <li>Di menu samping kiri, klik <b>Build</b> &gt; <b>Realtime Database</b> &gt; klik <b>Create Database</b>.</li>
+                      <li>Di tab <b>Rules</b>, ubah kodenya menjadi:<br>
+                        <pre class="code-snippet"><code>{
   "rules": {
     ".read": true,
     ".write": true
   }
 }</code></pre>
-                    </li>
-                    <li>Klik <b>Publish</b>, lalu salin URL database di bagian atas (contoh: <code>https://nama-proyek-default-rtdb.firebaseio.com/</code>).</li>
-                    <li>Tempelkan URL tersebut pada kolom di atas, lalu klik <b>Hubungkan Cloud</b>!</li>
-                  </ol>
-                </div>
-              </details>
+                      </li>
+                      <li>Klik <b>Publish</b>, lalu salin URL database di bagian atas (contoh: <code>https://nama-proyek-default-rtdb.firebaseio.com/</code>).</li>
+                      <li>Tempelkan URL tersebut pada kolom di atas, lalu klik <b>Hubungkan Cloud</b>!</li>
+                    </ol>
+                  </div>
+                </details>
+              </div>
             </div>
           </div>
 
@@ -762,7 +817,7 @@
               </div>
             </div>
 
-            <div class="auth-sync-info-box">
+            <div class="auth-sync-info-box" style="display: none;">
               <div class="sync-info-item">
                 <span class="sync-info-label">Ruang Kerja Cloud:</span>
                 <code id="auth-cloud-path" class="sync-info-code">workspaces/budi/</code>

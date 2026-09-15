@@ -62,7 +62,6 @@
 
     // Header & Stats
     headerTotalCount: document.getElementById('header-total-count'),
-    btnStats: document.getElementById('btn-stats'),
     btnSettings: document.getElementById('btn-settings'),
     btnAddHeader: document.getElementById('btn-add-header'),
     syncIndicator: document.getElementById('sync-indicator'),
@@ -133,6 +132,18 @@
     btnSaveCloud: document.getElementById('btn-save-cloud'),
     btnSyncNow: document.getElementById('btn-sync-now'),
     btnDisconnectCloud: document.getElementById('btn-disconnect-cloud'),
+
+    // Cloud Security & Sensor Elements
+    cloudConfigLockedView: document.getElementById('cloud-config-locked-view'),
+    cloudConfigUnlockedView: document.getElementById('cloud-config-unlocked-view'),
+    btnShowUnlockCloud: document.getElementById('btn-show-unlock-cloud'),
+    cloudUnlockPromptPanel: document.getElementById('cloud-unlock-prompt-panel'),
+    inputUnlockCloudPassword: document.getElementById('input-unlock-cloud-password'),
+    btnVerifyUnlockCloud: document.getElementById('btn-verify-unlock-cloud'),
+    btnCancelUnlockCloud: document.getElementById('btn-cancel-unlock-cloud'),
+    cloudUnlockErrMsg: document.getElementById('cloud-unlock-err-msg'),
+    btnRelockCloud: document.getElementById('btn-relock-cloud'),
+    btnSyncNowLocked: document.getElementById('btn-sync-now-locked'),
 
     // Delete Modal
     modalDelete: document.getElementById('modal-delete'),
@@ -302,6 +313,7 @@
     if (!config || !config.databaseURL) {
       setSyncStatus('local', 'Lokal');
       if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'none';
+      if (elements.btnSyncNowLocked) elements.btnSyncNowLocked.style.display = 'none';
       if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'none';
       return;
     }
@@ -336,6 +348,7 @@
       state.cloudSync.isConfigured = true;
 
       if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'inline-flex';
+      if (elements.btnSyncNowLocked) elements.btnSyncNowLocked.style.display = 'inline-flex';
       if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'inline-flex';
 
       // Detach previous listeners if exist
@@ -1554,16 +1567,29 @@
     elements.btnCancelDelete.addEventListener('click', () => elements.modalDelete.style.display = 'none');
     elements.btnConfirmDelete.addEventListener('click', confirmDelete);
 
+    // Helper to reset cloud config to locked state
+    const resetCloudLockState = () => {
+      if (elements.cloudConfigLockedView) elements.cloudConfigLockedView.style.display = 'block';
+      if (elements.cloudConfigUnlockedView) elements.cloudConfigUnlockedView.style.display = 'none';
+      if (elements.cloudUnlockPromptPanel) elements.cloudUnlockPromptPanel.style.display = 'none';
+      if (elements.inputUnlockCloudPassword) elements.inputUnlockCloudPassword.value = '';
+      if (elements.cloudUnlockErrMsg) elements.cloudUnlockErrMsg.style.display = 'none';
+    };
+
     // Settings Modal Events
-    elements.btnSettings.addEventListener('click', () => {
-      updateCategoryCounts();
-      elements.modalSettings.style.display = 'flex';
-    });
-    elements.btnStats.addEventListener('click', () => {
-      updateCategoryCounts();
-      elements.modalSettings.style.display = 'flex';
-    });
-    elements.btnCloseSettings.addEventListener('click', () => elements.modalSettings.style.display = 'none');
+    if (elements.btnSettings) {
+      elements.btnSettings.addEventListener('click', () => {
+        updateCategoryCounts();
+        resetCloudLockState();
+        elements.modalSettings.style.display = 'flex';
+      });
+    }
+    if (elements.btnCloseSettings) {
+      elements.btnCloseSettings.addEventListener('click', () => {
+        resetCloudLockState();
+        elements.modalSettings.style.display = 'none';
+      });
+    }
     
     const btnSettingsOpenXml = document.getElementById('btn-settings-open-xml');
     if (btnSettingsOpenXml) {
@@ -1765,10 +1791,85 @@
         state.cloudSync.isConfigured = false;
         elements.inputFirebaseUrl.value = '';
         if (elements.inputFirebaseApiKey) elements.inputFirebaseApiKey.value = '';
-        elements.btnSyncNow.style.display = 'none';
-        elements.btnDisconnectCloud.style.display = 'none';
+        if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'none';
+        if (elements.btnSyncNowLocked) elements.btnSyncNowLocked.style.display = 'none';
+        if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'none';
         setSyncStatus('local', 'Lokal');
         showToast('Koneksi Cloud Diputus', 'Sekarang berjalan dalam mode lokal.');
+      });
+    }
+
+    // =========================================================================
+    // Cloud Security Lock / Unlock with Password 'smj'
+    // =========================================================================
+    const CLOUD_ADMIN_PASSWORD = 'smj';
+
+    if (elements.btnShowUnlockCloud) {
+      elements.btnShowUnlockCloud.addEventListener('click', () => {
+        if (elements.cloudUnlockPromptPanel) {
+          elements.cloudUnlockPromptPanel.style.display = 'block';
+          if (elements.inputUnlockCloudPassword) {
+            elements.inputUnlockCloudPassword.value = '';
+            setTimeout(() => elements.inputUnlockCloudPassword.focus(), 100);
+          }
+          if (elements.cloudUnlockErrMsg) elements.cloudUnlockErrMsg.style.display = 'none';
+        }
+      });
+    }
+
+    if (elements.btnCancelUnlockCloud) {
+      elements.btnCancelUnlockCloud.addEventListener('click', () => {
+        if (elements.cloudUnlockPromptPanel) elements.cloudUnlockPromptPanel.style.display = 'none';
+        if (elements.cloudUnlockErrMsg) elements.cloudUnlockErrMsg.style.display = 'none';
+      });
+    }
+
+    const verifyCloudUnlock = () => {
+      if (!elements.inputUnlockCloudPassword) return;
+      const pwd = elements.inputUnlockCloudPassword.value.trim();
+      if (pwd === CLOUD_ADMIN_PASSWORD) {
+        if (elements.cloudConfigLockedView) elements.cloudConfigLockedView.style.display = 'none';
+        if (elements.cloudConfigUnlockedView) elements.cloudConfigUnlockedView.style.display = 'block';
+        if (elements.cloudUnlockPromptPanel) elements.cloudUnlockPromptPanel.style.display = 'none';
+        if (elements.cloudUnlockErrMsg) elements.cloudUnlockErrMsg.style.display = 'none';
+        showToast('Akses Database Terbuka ✓', 'Konfigurasi Firebase dapat dilihat & diedit.');
+      } else {
+        if (elements.cloudUnlockErrMsg) {
+          elements.cloudUnlockErrMsg.style.display = 'block';
+          elements.cloudUnlockErrMsg.textContent = 'Password salah! Akses konfigurasi ditolak.';
+        }
+        elements.inputUnlockCloudPassword.select();
+      }
+    };
+
+    if (elements.btnVerifyUnlockCloud) {
+      elements.btnVerifyUnlockCloud.addEventListener('click', verifyCloudUnlock);
+    }
+
+    if (elements.inputUnlockCloudPassword) {
+      elements.inputUnlockCloudPassword.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          verifyCloudUnlock();
+        }
+      });
+    }
+
+    if (elements.btnRelockCloud) {
+      elements.btnRelockCloud.addEventListener('click', () => {
+        resetCloudLockState();
+        showToast('Terkunci 🔒', 'Konfigurasi database kembali disensor & dilindungi.');
+      });
+    }
+
+    if (elements.btnSyncNowLocked) {
+      elements.btnSyncNowLocked.addEventListener('click', () => {
+        if (!state.cloudSync.db) {
+          alert('Cloud belum terhubung!');
+          return;
+        }
+        syncChangeToCloud();
+        showToast('Sinkronisasi Dikirim! ✓', 'Data lokal diunggah ke cloud.');
       });
     }
 

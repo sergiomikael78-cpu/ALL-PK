@@ -1368,6 +1368,164 @@ body {
   padding-top: 8px;
 }
 
+/* Database URL Security & Lock Box */
+.cloud-security-box {
+  background: rgba(10, 15, 29, 0.7);
+  border: 1px solid rgba(0, 242, 254, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+
+.cloud-unlocked-box {
+  background: rgba(10, 15, 29, 0.4);
+  border: 1px dashed rgba(0, 242, 254, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+
+.security-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.security-card-header.unlocked-bar {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+  margin-bottom: 12px;
+}
+
+.security-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+}
+
+.security-status-badge.unlocked {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.security-badge-icon {
+  font-size: 12px;
+}
+
+.security-badge-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fbbf24;
+  letter-spacing: 0.2px;
+}
+
+.security-status-badge.unlocked .security-badge-title {
+  color: #34d399;
+}
+
+.btn-unlock-badge,
+.btn-relock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-unlock-badge {
+  background: rgba(0, 242, 254, 0.12);
+  color: var(--cyber-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+}
+
+.btn-unlock-badge:hover {
+  background: rgba(0, 242, 254, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-relock-badge {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-relock-badge:hover {
+  background: rgba(239, 68, 68, 0.22);
+  transform: translateY(-1px);
+}
+
+.security-mask-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  margin-top: 6px;
+}
+
+.security-mask-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.security-mask-dots {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--cyber-cyan);
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.security-prompt-panel {
+  background: rgba(14, 20, 36, 0.95);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-top: 10px;
+  animation: fadeInDown 0.2s ease;
+}
+
+.prompt-prompt-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.prompt-input-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.prompt-security-input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.security-error-text {
+  font-size: 11px;
+  color: #f87171;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
 .guide-summary {
   font-size: 12px;
   color: var(--cyber-cyan);
