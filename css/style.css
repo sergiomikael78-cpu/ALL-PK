@@ -1350,6 +1350,96 @@ body {
   border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
+.pill-locked {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.pill-unlocked {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Masked Input & Lock Controls */
+.masked-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-database-masked {
+  padding-right: 42px !important;
+  transition: all 0.2s ease;
+}
+
+.btn-peek-url, .btn-peek {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 15px;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.btn-peek-url:hover, .btn-peek:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-lock-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  color: #fde047;
+}
+
+.btn-lock-toggle:hover {
+  background: rgba(234, 179, 8, 0.18);
+  border-color: #fde047;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.25);
+}
+
+.btn-lock-toggle.is-unlocked {
+  background: rgba(148, 163, 184, 0.1);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: var(--text-secondary);
+}
+
+.btn-lock-toggle.is-unlocked:hover {
+  background: rgba(148, 163, 184, 0.18);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pass-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pass-input-wrapper input {
+  padding-right: 44px !important;
+}
+
 .cloud-input-group {
   margin-top: 4px;
 }

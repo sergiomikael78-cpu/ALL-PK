@@ -28,6 +28,8 @@
     activeTab: 'pk', // 'pk' | 'keep'
     searchQuery: '',
     searchMode: 'all', // 'all' | 'trigger' | 'content'
+    isCloudUnlocked: false,
+    isUrlRevealed: false,
     sortBy: 'default',
     totalCopiedCount: 0,
     pageSize: 30,
@@ -62,7 +64,6 @@
 
     // Header & Stats
     headerTotalCount: document.getElementById('header-total-count'),
-    btnStats: document.getElementById('btn-stats'),
     btnSettings: document.getElementById('btn-settings'),
     btnAddHeader: document.getElementById('btn-add-header'),
     syncIndicator: document.getElementById('sync-indicator'),
@@ -101,22 +102,26 @@
     modalTitle: document.getElementById('modal-title'),
     modalModeTag: document.getElementById('modal-mode-tag'),
     editTemplateId: document.getElementById('edit-template-id'),
-    inputTrigger: document.getElementById('input-trigger'),
-    selectCategory: document.getElementById('select-category'),
-    inputContent: document.getElementById('input-content'),
-    formCharCount: document.getElementById('form-char-count'),
-    btnCloseModal: document.getElementById('btn-close-modal'),
-    btnCancelModal: document.getElementById('btn-cancel-modal'),
+    inputCategory: document.getElementById('template-category'),
+    customCategoryGroup: document.getElementById('custom-category-group'),
+    inputCustomCategory: document.getElementById('template-custom-category'),
+    inputTrigger: document.getElementById('template-trigger'),
+    inputTriggerType: document.getElementById('template-trigger-type'),
+    inputContent: document.getElementById('template-content'),
+    charCounter: document.getElementById('char-counter'),
+    btnSaveTemplate: document.getElementById('btn-save-template'),
+    btnCloseTemplate: document.getElementById('btn-close-template'),
+    btnCancelTemplate: document.getElementById('btn-cancel-template'),
 
-    // Variable Replacer Modal
+    // Variable Sheet Modal
     modalVariable: document.getElementById('modal-variable'),
     varInputValue: document.getElementById('var-input-value'),
     varPreviewBox: document.getElementById('var-preview-box'),
+    btnCopyVariable: document.getElementById('btn-copy-variable'),
     btnCloseVariable: document.getElementById('btn-close-variable'),
     btnCancelVariable: document.getElementById('btn-cancel-variable'),
-    btnCopyVariable: document.getElementById('btn-copy-variable'),
 
-    // Settings / Storage Modal
+    // Settings Modal
     modalSettings: document.getElementById('modal-settings'),
     btnCloseSettings: document.getElementById('btn-close-settings'),
     btnExportJson: document.getElementById('btn-export-json'),
@@ -126,13 +131,29 @@
     statCopied: document.getElementById('stat-copied'),
     statPinned: document.getElementById('stat-pinned'),
 
-    // Cloud Sync Elements
+    // Cloud Sync & Security Elements
     cloudBadgeStatus: document.getElementById('cloud-badge-status'),
+    cloudLockStatus: document.getElementById('cloud-lock-status'),
+    labelCloudSecurityHint: document.getElementById('label-cloud-security-hint'),
     inputFirebaseUrl: document.getElementById('input-firebase-url'),
+    btnPeekCloudUrl: document.getElementById('btn-peek-cloud-url'),
+    cloudAdminSection: document.getElementById('cloud-admin-section'),
     inputFirebaseApiKey: document.getElementById('input-firebase-apikey'),
     btnSaveCloud: document.getElementById('btn-save-cloud'),
     btnSyncNow: document.getElementById('btn-sync-now'),
     btnDisconnectCloud: document.getElementById('btn-disconnect-cloud'),
+    btnToggleCloudLock: document.getElementById('btn-toggle-cloud-lock'),
+    lockToggleIcon: document.getElementById('lock-toggle-icon'),
+    lockToggleLabel: document.getElementById('lock-toggle-label'),
+
+    // Admin Lock Modal (smj)
+    modalAdminLock: document.getElementById('modal-admin-lock'),
+    formAdminLock: document.getElementById('form-admin-lock'),
+    adminInputPass: document.getElementById('admin-input-pass'),
+    adminLockError: document.getElementById('admin-lock-error'),
+    btnPeekAdminPass: document.getElementById('btn-peek-admin-pass'),
+    btnCloseAdminLock: document.getElementById('btn-close-admin-lock'),
+    btnCancelAdminLock: document.getElementById('btn-cancel-admin-lock'),
 
     // Delete Modal
     modalDelete: document.getElementById('modal-delete'),
@@ -148,7 +169,6 @@
     btnCancelAuth: document.getElementById('btn-cancel-auth'),
     authActiveView: document.getElementById('auth-active-view'),
     authDisplayUsername: document.getElementById('auth-display-username'),
-    authCloudPath: document.getElementById('auth-cloud-path'),
     btnLogoutUser: document.getElementById('btn-logout-user'),
     btnCloseAuthActive: document.getElementById('btn-close-auth-active'),
     formAuthLogin: document.getElementById('form-auth-login'),
@@ -297,17 +317,103 @@
   let dbRefListener = null;
   let dbKeepRefListener = null;
 
+  const ADMIN_DB_PASSWORD = 'smj';
+
+  function updateCloudLockUI() {
+    const config = window.getFirebaseConfig ? window.getFirebaseConfig() : null;
+    const realUrl = config ? (config.databaseURL || '') : '';
+
+    if (state.isCloudUnlocked) {
+      // Akses Admin Terbuka
+      if (elements.cloudLockStatus) {
+        elements.cloudLockStatus.className = 'badge-status-pill pill-unlocked';
+        elements.cloudLockStatus.textContent = '🔓 Akses Admin';
+      }
+      if (elements.labelCloudSecurityHint) {
+        elements.labelCloudSecurityHint.textContent = 'Akses Terbuka';
+      }
+      if (elements.cloudAdminSection) {
+        elements.cloudAdminSection.style.display = 'block';
+      }
+      if (elements.inputFirebaseUrl) {
+        elements.inputFirebaseUrl.readOnly = false;
+        elements.inputFirebaseUrl.value = realUrl;
+        if (state.isUrlRevealed) {
+          elements.inputFirebaseUrl.type = 'text';
+          if (elements.btnPeekCloudUrl) elements.btnPeekCloudUrl.textContent = '👁️';
+        } else {
+          elements.inputFirebaseUrl.type = 'password';
+          if (elements.btnPeekCloudUrl) elements.btnPeekCloudUrl.textContent = '👁️‍🗨️';
+        }
+      }
+      if (elements.btnToggleCloudLock) {
+        elements.btnToggleCloudLock.classList.add('is-unlocked');
+        if (elements.lockToggleIcon) elements.lockToggleIcon.textContent = '🔒';
+        if (elements.lockToggleLabel) elements.lockToggleLabel.textContent = 'Kunci Kembali Pengaturan Database';
+      }
+    } else {
+      // Terkunci & Tersensor (Default)
+      if (elements.cloudLockStatus) {
+        elements.cloudLockStatus.className = 'badge-status-pill pill-locked';
+        elements.cloudLockStatus.textContent = '🔒 Terkunci (Admin)';
+      }
+      if (elements.labelCloudSecurityHint) {
+        elements.labelCloudSecurityHint.textContent = 'Tersensor 🔒';
+      }
+      if (elements.cloudAdminSection) {
+        elements.cloudAdminSection.style.display = 'none';
+      }
+      if (elements.inputFirebaseUrl) {
+        elements.inputFirebaseUrl.readOnly = true;
+        elements.inputFirebaseUrl.type = 'password';
+        elements.inputFirebaseUrl.value = realUrl ? 'https://pk-matrix2-••••••••••••••••.firebaseio.com' : '';
+      }
+      if (elements.btnPeekCloudUrl) {
+        elements.btnPeekCloudUrl.textContent = '🔒';
+      }
+      if (elements.btnToggleCloudLock) {
+        elements.btnToggleCloudLock.classList.remove('is-unlocked');
+        if (elements.lockToggleIcon) elements.lockToggleIcon.textContent = '🔒';
+        if (elements.lockToggleLabel) elements.lockToggleLabel.textContent = 'Buka Kunci Pengaturan Database (Password: smj)';
+      }
+    }
+  }
+
+  function openAdminLockModal() {
+    if (!elements.modalAdminLock) return;
+    if (elements.adminInputPass) {
+      elements.adminInputPass.value = '';
+      elements.adminInputPass.type = 'password';
+    }
+    if (elements.btnPeekAdminPass) {
+      elements.btnPeekAdminPass.textContent = '👁️';
+    }
+    if (elements.adminLockError) {
+      elements.adminLockError.style.display = 'none';
+    }
+    elements.modalAdminLock.style.display = 'flex';
+    setTimeout(() => {
+      if (elements.adminInputPass) elements.adminInputPass.focus();
+    }, 100);
+  }
+
+  function closeAdminLockModal() {
+    if (!elements.modalAdminLock) return;
+    elements.modalAdminLock.style.display = 'none';
+  }
+
   function initCloudSync() {
     const config = window.getFirebaseConfig ? window.getFirebaseConfig() : null;
     if (!config || !config.databaseURL) {
       setSyncStatus('local', 'Lokal');
       if (elements.btnSyncNow) elements.btnSyncNow.style.display = 'none';
       if (elements.btnDisconnectCloud) elements.btnDisconnectCloud.style.display = 'none';
+      updateCloudLockUI();
       return;
     }
 
-    // Populate inputs if present
-    if (elements.inputFirebaseUrl) elements.inputFirebaseUrl.value = config.databaseURL || '';
+    // Populate inputs safely via updateCloudLockUI
+    updateCloudLockUI();
     if (elements.inputFirebaseApiKey && config.apiKey) elements.inputFirebaseApiKey.value = config.apiKey || '';
 
     try {
@@ -1153,7 +1259,6 @@
 
       const userDisplay = window.WorkspaceManager.getCurrentUserDisplay();
       if (elements.authDisplayUsername) elements.authDisplayUsername.textContent = userDisplay;
-      if (elements.authCloudPath) elements.authCloudPath.textContent = getPkFirebasePath();
 
       const copyTexts = elements.modalAuth.querySelectorAll('.copy-user-id-text');
       copyTexts.forEach(el => el.textContent = window.WorkspaceManager.getCurrentUser() || 'user');
@@ -1555,15 +1660,21 @@
     elements.btnConfirmDelete.addEventListener('click', confirmDelete);
 
     // Settings Modal Events
-    elements.btnSettings.addEventListener('click', () => {
-      updateCategoryCounts();
-      elements.modalSettings.style.display = 'flex';
-    });
-    elements.btnStats.addEventListener('click', () => {
-      updateCategoryCounts();
-      elements.modalSettings.style.display = 'flex';
-    });
-    elements.btnCloseSettings.addEventListener('click', () => elements.modalSettings.style.display = 'none');
+    if (elements.btnSettings) {
+      elements.btnSettings.addEventListener('click', () => {
+        updateCategoryCounts();
+        updateCloudLockUI();
+        elements.modalSettings.style.display = 'flex';
+      });
+    }
+    if (elements.btnCloseSettings) {
+      elements.btnCloseSettings.addEventListener('click', () => {
+        state.isCloudUnlocked = false;
+        state.isUrlRevealed = false;
+        updateCloudLockUI();
+        elements.modalSettings.style.display = 'none';
+      });
+    }
     
     const btnSettingsOpenXml = document.getElementById('btn-settings-open-xml');
     if (btnSettingsOpenXml) {
@@ -1772,6 +1883,74 @@
       });
     }
 
+    // Toggle Cloud Lock Button
+    if (elements.btnToggleCloudLock) {
+      elements.btnToggleCloudLock.addEventListener('click', () => {
+        if (state.isCloudUnlocked) {
+          // Kunci kembali secara instan
+          state.isCloudUnlocked = false;
+          state.isUrlRevealed = false;
+          updateCloudLockUI();
+          showToast('Database Dikunci 🔒', 'Akses konfigurasi kembali diamankan.');
+        } else {
+          // Buka dialog konfirmasi password admin (smj)
+          openAdminLockModal();
+        }
+      });
+    }
+
+    // Peek Cloud URL button (sensor / buka sensor)
+    if (elements.btnPeekCloudUrl) {
+      elements.btnPeekCloudUrl.addEventListener('click', () => {
+        if (!state.isCloudUnlocked) {
+          openAdminLockModal();
+        } else {
+          state.isUrlRevealed = !state.isUrlRevealed;
+          updateCloudLockUI();
+        }
+      });
+    }
+
+    // Admin Lock Dialog Events (Password: smj)
+    if (elements.formAdminLock) {
+      elements.formAdminLock.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const pass = elements.adminInputPass ? elements.adminInputPass.value.trim() : '';
+        if (pass === ADMIN_DB_PASSWORD) {
+          state.isCloudUnlocked = true;
+          state.isUrlRevealed = true;
+          updateCloudLockUI();
+          closeAdminLockModal();
+          showToast('Akses Admin Terbuka! 🔓', 'Konfigurasi database dapat dilihat.');
+        } else {
+          if (elements.adminLockError) {
+            elements.adminLockError.style.display = 'block';
+          }
+          if (elements.adminInputPass) {
+            elements.adminInputPass.value = '';
+            elements.adminInputPass.focus();
+          }
+        }
+      });
+    }
+
+    if (elements.btnPeekAdminPass) {
+      elements.btnPeekAdminPass.addEventListener('click', () => {
+        if (elements.adminInputPass) {
+          const isPass = elements.adminInputPass.type === 'password';
+          elements.adminInputPass.type = isPass ? 'text' : 'password';
+          elements.btnPeekAdminPass.textContent = isPass ? '👁️‍🗨️' : '👁️';
+        }
+      });
+    }
+
+    if (elements.btnCloseAdminLock) {
+      elements.btnCloseAdminLock.addEventListener('click', closeAdminLockModal);
+    }
+    if (elements.btnCancelAdminLock) {
+      elements.btnCancelAdminLock.addEventListener('click', closeAdminLockModal);
+    }
+
     // Close Modals when clicking on backdrop
     [
       elements.modalTemplate, 
@@ -1779,12 +1958,18 @@
       elements.modalSettings, 
       elements.modalDelete, 
       elements.modalAuth, 
-      elements.modalXml
+      elements.modalXml,
+      elements.modalAdminLock
     ].forEach(modal => {
       if (modal) {
         modal.addEventListener('click', (e) => {
           if (e.target === modal) {
             modal.style.display = 'none';
+            if (modal === elements.modalSettings) {
+              state.isCloudUnlocked = false;
+              state.isUrlRevealed = false;
+              updateCloudLockUI();
+            }
           }
         });
       }
