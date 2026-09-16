@@ -48,35 +48,12 @@
     // Top Tabs Navigation
     tabBtnPk: document.getElementById('tab-btn-pk'),
     tabBtnKeep: document.getElementById('tab-btn-keep'),
-    tabBtnGuide: document.getElementById('tab-btn-guide'),
     tabPkCount: document.getElementById('tab-pk-count'),
     tabKeepCount: document.getElementById('tab-keep-count'),
-    tabGuideBadge: document.getElementById('tab-guide-badge'),
     pkHeaderControls: document.getElementById('pk-header-controls'),
     keepHeaderControls: document.getElementById('keep-header-controls'),
-    guideHeaderControls: document.getElementById('guide-header-controls'),
     viewPk: document.getElementById('view-pk'),
     viewKeep: document.getElementById('view-keep'),
-    viewGuide: document.getElementById('view-guide'),
-    btnBannerGuideCta: document.getElementById('btn-banner-guide-cta'),
-    btnOpenGuide: document.getElementById('btn-open-guide'),
-    btnHeroOpenMobile: document.getElementById('btn-hero-open-mobile'),
-    btnHeroCopyLink: document.getElementById('btn-hero-copy-link'),
-    btnCopyApkLink: document.getElementById('btn-copy-apk-link'),
-    btnGuideToPk: document.getElementById('btn-guide-to-pk'),
-    btnGuideToKeep: document.getElementById('btn-guide-to-keep'),
-
-    // Guide Categories & Navigation
-    btnCatAndroid: document.getElementById('btn-cat-android'),
-    btnCatPc: document.getElementById('btn-cat-pc'),
-    hdrCatAndroid: document.getElementById('hdr-cat-android'),
-    hdrCatPc: document.getElementById('hdr-cat-pc'),
-    guideSectionAndroid: document.getElementById('guide-section-android'),
-    guideSectionPc: document.getElementById('guide-section-pc'),
-    guideStageChips: document.getElementById('guide-stage-chips'),
-    btnXmlHelperGuide: document.getElementById('btn-xml-helper-guide'),
-    btnPcOpenXml: document.getElementById('btn-pc-open-xml'),
-    btnSwitchToAndroidGuide: document.getElementById('btn-switch-to-android-guide'),
 
     // User Profile Pill & XML Button
     btnUserProfile: document.getElementById('btn-user-profile'),
@@ -1145,7 +1122,7 @@
   }
 
   // =========================================================================
-  // Tab Switching (PK Matrix vs KEEP Vault vs PANDUAN AKTIFKAN HP)
+  // Tab Switching (PK Matrix vs KEEP Vault)
   // =========================================================================
   function switchTab(tabName) {
     state.activeTab = tabName;
@@ -1153,91 +1130,26 @@
     if (tabName === 'pk') {
       if (elements.tabBtnPk) elements.tabBtnPk.classList.add('active');
       if (elements.tabBtnKeep) elements.tabBtnKeep.classList.remove('active');
-      if (elements.tabBtnGuide) elements.tabBtnGuide.classList.remove('active');
       if (elements.pkHeaderControls) elements.pkHeaderControls.style.display = 'block';
       if (elements.keepHeaderControls) elements.keepHeaderControls.style.display = 'none';
-      if (elements.guideHeaderControls) elements.guideHeaderControls.style.display = 'none';
       if (elements.viewPk) elements.viewPk.style.display = 'block';
       if (elements.viewKeep) elements.viewKeep.style.display = 'none';
-      if (elements.viewGuide) elements.viewGuide.style.display = 'none';
-      if (elements.btnAddHeader) {
-        elements.btnAddHeader.style.display = 'inline-flex';
-        elements.btnAddHeader.querySelector('span').textContent = 'Tambah';
-      }
-      if (elements.btnFabAdd) {
-        elements.btnFabAdd.style.display = 'flex';
-        elements.btnFabAdd.title = 'Tambah Template Baru';
-      }
+      if (elements.btnAddHeader) elements.btnAddHeader.querySelector('span').textContent = 'Tambah';
+      if (elements.btnFabAdd) elements.btnFabAdd.title = 'Tambah Template Baru';
     } else if (tabName === 'keep') {
       if (elements.tabBtnKeep) elements.tabBtnKeep.classList.add('active');
       if (elements.tabBtnPk) elements.tabBtnPk.classList.remove('active');
-      if (elements.tabBtnGuide) elements.tabBtnGuide.classList.remove('active');
       if (elements.pkHeaderControls) elements.pkHeaderControls.style.display = 'none';
       if (elements.keepHeaderControls) elements.keepHeaderControls.style.display = 'block';
-      if (elements.guideHeaderControls) elements.guideHeaderControls.style.display = 'none';
       if (elements.viewPk) elements.viewPk.style.display = 'none';
       if (elements.viewKeep) elements.viewKeep.style.display = 'block';
-      if (elements.viewGuide) elements.viewGuide.style.display = 'none';
-      if (elements.btnAddHeader) {
-        elements.btnAddHeader.style.display = 'inline-flex';
-        elements.btnAddHeader.querySelector('span').textContent = '+ Catatan';
-      }
-      if (elements.btnFabAdd) {
-        elements.btnFabAdd.style.display = 'flex';
-        elements.btnFabAdd.title = 'Buat Catatan Baru';
-      }
+      if (elements.btnAddHeader) elements.btnAddHeader.querySelector('span').textContent = '+ Catatan';
+      if (elements.btnFabAdd) elements.btnFabAdd.title = 'Buat Catatan Baru';
       if (window.KeepManager && typeof window.KeepManager.refresh === 'function') {
         window.KeepManager.refresh();
       }
-    } else if (tabName === 'guide') {
-      if (elements.tabBtnGuide) elements.tabBtnGuide.classList.add('active');
-      if (elements.tabBtnPk) elements.tabBtnPk.classList.remove('active');
-      if (elements.tabBtnKeep) elements.tabBtnKeep.classList.remove('active');
-      if (elements.pkHeaderControls) elements.pkHeaderControls.style.display = 'none';
-      if (elements.keepHeaderControls) elements.keepHeaderControls.style.display = 'none';
-      if (elements.guideHeaderControls) elements.guideHeaderControls.style.display = 'block';
-      if (elements.viewPk) elements.viewPk.style.display = 'none';
-      if (elements.viewKeep) elements.viewKeep.style.display = 'none';
-      if (elements.viewGuide) elements.viewGuide.style.display = 'block';
-      if (elements.btnAddHeader) elements.btnAddHeader.style.display = 'none';
-      if (elements.btnFabAdd) elements.btnFabAdd.style.display = 'none';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
-
-  // Expose switchAppTab to window for cross-module calls
-  window.switchAppTab = switchTab;
-
-  // =========================================================================
-  // Guide Category Switching (Android Keyboard vs Perfect Keyboard PC)
-  // =========================================================================
-  function switchGuideCategory(cat) {
-    const isPc = (cat === 'pc');
-
-    // Toggle guide sections visibility
-    if (elements.guideSectionAndroid) {
-      elements.guideSectionAndroid.style.display = isPc ? 'none' : 'block';
-    }
-    if (elements.guideSectionPc) {
-      elements.guideSectionPc.style.display = isPc ? 'block' : 'none';
-    }
-
-    // Toggle stage chips (only relevant for Android tutorial)
-    if (elements.guideStageChips) {
-      elements.guideStageChips.style.display = isPc ? 'none' : 'flex';
-    }
-
-    // Toggle header toggle buttons
-    if (elements.hdrCatAndroid) elements.hdrCatAndroid.classList.toggle('active', !isPc);
-    if (elements.hdrCatPc) elements.hdrCatPc.classList.toggle('active', isPc);
-
-    // Toggle master switcher cards
-    if (elements.btnCatAndroid) elements.btnCatAndroid.classList.toggle('active', !isPc);
-    if (elements.btnCatPc) elements.btnCatPc.classList.toggle('active', isPc);
-  }
-
-  // Expose switchGuideCategory to window
-  window.switchGuideCategory = switchGuideCategory;
 
   // =========================================================================
   // Multi-User Workspace & Auth UI Logic
@@ -1523,115 +1435,8 @@
     // Tab Switcher Events
     if (elements.tabBtnPk) elements.tabBtnPk.addEventListener('click', () => switchTab('pk'));
     if (elements.tabBtnKeep) elements.tabBtnKeep.addEventListener('click', () => switchTab('keep'));
-    if (elements.tabBtnGuide) elements.tabBtnGuide.addEventListener('click', () => switchTab('guide'));
-    if (elements.btnBannerGuideCta) elements.btnBannerGuideCta.addEventListener('click', () => switchTab('guide'));
-    if (elements.btnOpenGuide) {
-      elements.btnOpenGuide.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        switchTab('guide');
-      });
-    }
 
-    if (elements.btnGuideToPk) elements.btnGuideToPk.addEventListener('click', () => switchTab('pk'));
-    if (elements.btnGuideToKeep) elements.btnGuideToKeep.addEventListener('click', () => switchTab('keep'));
-    if (elements.btnHeroOpenMobile) {
-      elements.btnHeroOpenMobile.addEventListener('click', () => {
-        if (window.MobileHub && typeof window.MobileHub.open === 'function') {
-          window.MobileHub.open();
-        }
-      });
-    }
-
-    // Copy APK Link handler
-    const handleCopyApkLink = () => {
-      const apkUrl = new URL('PK_Keyboard_CS.apk', window.location.href).href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(apkUrl).then(() => {
-          showToast('Link APK Tersalin! 📋', 'Bagikan link ke grup tim untuk download langsung.');
-        }).catch(() => {
-          prompt('Salin link download APK di bawah:', apkUrl);
-        });
-      } else {
-        prompt('Salin link download APK di bawah:', apkUrl);
-      }
-    };
-    if (elements.btnCopyApkLink) elements.btnCopyApkLink.addEventListener('click', handleCopyApkLink);
-    if (elements.btnHeroCopyLink) elements.btnHeroCopyLink.addEventListener('click', handleCopyApkLink);
-
-    // Guide Stage Filter Chips & Stage Buttons
-    const stageChips = document.querySelectorAll('.stage-chip, .stage-nav-btn');
-    stageChips.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const stage = btn.getAttribute('data-stage') || btn.getAttribute('data-target-stage');
-        if (!stage) return;
-        
-        // Sync active class on both chips & nav-btns
-        document.querySelectorAll('.stage-chip').forEach(c => {
-          c.classList.toggle('active', c.getAttribute('data-stage') === stage);
-        });
-        document.querySelectorAll('.stage-nav-btn').forEach(b => {
-          b.classList.toggle('active', b.getAttribute('data-target-stage') === stage);
-        });
-
-        const stageInstall = document.getElementById('stage-install');
-        const stageActivate = document.getElementById('stage-activate');
-        const stageUsage = document.getElementById('stage-usage');
-
-        if (stage === 'all') {
-          if (stageInstall) stageInstall.style.display = 'block';
-          if (stageActivate) stageActivate.style.display = 'block';
-          if (stageUsage) stageUsage.style.display = 'block';
-        } else if (stage === 'install') {
-          if (stageInstall) stageInstall.style.display = 'block';
-          if (stageActivate) stageActivate.style.display = 'none';
-          if (stageUsage) stageUsage.style.display = 'none';
-          if (stageInstall) stageInstall.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else if (stage === 'activate') {
-          if (stageInstall) stageInstall.style.display = 'none';
-          if (stageActivate) stageActivate.style.display = 'block';
-          if (stageUsage) stageUsage.style.display = 'none';
-          if (stageActivate) stageActivate.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else if (stage === 'usage') {
-          if (stageInstall) stageInstall.style.display = 'none';
-          if (stageActivate) stageActivate.style.display = 'none';
-          if (stageUsage) stageUsage.style.display = 'block';
-          if (stageUsage) stageUsage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Guide Category Switchers (Header & Master Switcher)
-    if (elements.hdrCatAndroid) elements.hdrCatAndroid.addEventListener('click', () => switchGuideCategory('android'));
-    if (elements.hdrCatPc) elements.hdrCatPc.addEventListener('click', () => switchGuideCategory('pc'));
-    if (elements.btnCatAndroid) elements.btnCatAndroid.addEventListener('click', () => switchGuideCategory('android'));
-    if (elements.btnCatPc) elements.btnCatPc.addEventListener('click', () => switchGuideCategory('pc'));
-
-    // Quick Action inside XML Modal Helper Card -> Go to PC Guide
-    if (elements.btnXmlHelperGuide) {
-      elements.btnXmlHelperGuide.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (elements.modalXml) elements.modalXml.style.display = 'none';
-        switchTab('guide');
-        switchGuideCategory('pc');
-      });
-    }
-
-    // Quick Action inside PC Guide -> Open XML Modal
-    if (elements.btnPcOpenXml) {
-      elements.btnPcOpenXml.addEventListener('click', () => {
-        if (typeof openXmlModal === 'function') openXmlModal();
-      });
-    }
-
-    // Quick Action inside PC Guide -> Switch to Android Guide
-    if (elements.btnSwitchToAndroidGuide) {
-      elements.btnSwitchToAndroidGuide.addEventListener('click', () => {
-        switchGuideCategory('android');
-      });
-    }
-
-    // Keyboard Shortcuts (Alt+1 for PK, Alt+2 for KEEP, Alt+3 for GUIDE)
+    // Keyboard Shortcuts (Alt+1 for PK, Alt+2 for KEEP)
     window.addEventListener('keydown', (e) => {
       if (e.altKey && e.key === '1') {
         e.preventDefault();
@@ -1639,9 +1444,6 @@
       } else if (e.altKey && e.key === '2') {
         e.preventDefault();
         switchTab('keep');
-      } else if (e.altKey && e.key === '3') {
-        e.preventDefault();
-        switchTab('guide');
       }
     });
 

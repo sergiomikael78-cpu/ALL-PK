@@ -14,3 +14,17 @@ __pycache__/
 # IDE configs
 .vscode/
 .idea/
+
+# Android Build & Gradle caches
+.gradle/
+**/build/
+android-pk-keyboard/.gradle/
+android-pk-keyboard/build/
+android-pk-keyboard/app/build/
+*.hprof
+local.properties
+*.iml
+
+# Scratch / temporary scripts
+scratch/
+

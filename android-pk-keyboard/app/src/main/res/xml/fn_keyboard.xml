@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="10%p"
+    android:keyHeight="45dp"
+    android:horizontalGap="0px"
+    android:verticalGap="4dp">
+
+    <!-- Row 1: Function Keys F1 - F12 (Dikelompokkan dalam 3 Blok PC) -->
+    <Row>
+        <Key android:codes="-301" android:keyLabel="F1" android:keyWidth="8.16%p" android:keyEdgeFlags="left" />
+        <Key android:codes="-302" android:keyLabel="F2" android:keyWidth="8.16%p" />
+        <Key android:codes="-303" android:keyLabel="F3" android:keyWidth="8.16%p" />
+        <Key android:codes="-304" android:keyLabel="F4" android:keyWidth="8.16%p" />
+
+        <Key android:codes="-305" android:keyLabel="F5" android:keyWidth="8.16%p" android:horizontalGap="1%p" />
+        <Key android:codes="-306" android:keyLabel="F6" android:keyWidth="8.16%p" />
+        <Key android:codes="-307" android:keyLabel="F7" android:keyWidth="8.16%p" />
+        <Key android:codes="-308" android:keyLabel="F8" android:keyWidth="8.16%p" />
+
+        <Key android:codes="-309" android:keyLabel="F9" android:keyWidth="8.16%p" android:horizontalGap="1%p" />
+        <Key android:codes="-310" android:keyLabel="F10" android:keyWidth="8.16%p" />
+        <Key android:codes="-311" android:keyLabel="F11" android:keyWidth="8.16%p" />
+        <Key android:codes="-312" android:keyLabel="F12" android:keyWidth="8.24%p" android:keyEdgeFlags="right" />
+    </Row>
+
+    <!-- Row 2: ESC, TAB, Num /, Num * | Num 7, Num 8, Num 9, ⌫ Hapus (Di Kanan Atas) -->
+    <Row>
+        <Key android:codes="-107" android:keyLabel="ESC" android:keyWidth="11%p" android:keyEdgeFlags="left" />
+        <Key android:codes="-106" android:keyLabel="TAB" android:keyWidth="11%p" />
+        <Key android:codes="-210" android:keyLabel="Num /" android:keyWidth="11%p" />
+        <Key android:codes="-211" android:keyLabel="Num *" android:keyWidth="11%p" />
+
+        <Key android:codes="-207" android:keyLabel="Num 7" android:keyWidth="13%p" android:horizontalGap="2%p" />
+        <Key android:codes="-208" android:keyLabel="Num 8" android:keyWidth="13%p" />
+        <Key android:codes="-209" android:keyLabel="Num 9" android:keyWidth="13%p" />
+        <Key android:codes="-5" android:keyLabel="⌫" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right" />
+    </Row>
+
+    <!-- Row 3: CTRL, HOME, END, INS | Num 4, Num 5, Num 6, DEL (Di Kanan Tengah) -->
+    <Row>
+        <Key android:codes="-114" android:keyLabel="CTRL" android:keyWidth="11%p" android:keyEdgeFlags="left" />
+        <Key android:codes="-115" android:keyLabel="HOME" android:keyWidth="11%p" />
+        <Key android:codes="-116" android:keyLabel="END" android:keyWidth="11%p" />
+        <Key android:codes="-113" android:keyLabel="INS" android:keyWidth="11%p" />
+
+        <Key android:codes="-204" android:keyLabel="Num 4" android:keyWidth="13%p" android:horizontalGap="2%p" />
+        <Key android:codes="-205" android:keyLabel="Num 5" android:keyWidth="13%p" />
+        <Key android:codes="-206" android:keyLabel="Num 6" android:keyWidth="13%p" />
+        <Key android:codes="-112" android:keyLabel="DEL" android:keyWidth="15%p" android:keyEdgeFlags="right" />
+    </Row>
+
+    <!-- Row 4: PGUP, PGDN, Copy, Paste | Num 1, Num 2, Num 3, Num + -->
+    <Row>
+        <Key android:codes="-117" android:keyLabel="PGUP" android:keyWidth="11%p" android:keyEdgeFlags="left" />
+        <Key android:codes="-118" android:keyLabel="PGDN" android:keyWidth="11%p" />
+        <Key android:codes="-102" android:keyLabel="Copy" android:keyWidth="11%p" />
+        <Key android:codes="-103" android:keyLabel="Paste" android:keyWidth="11%p" />
+
+        <Key android:codes="-201" android:keyLabel="Num 1" android:keyWidth="13%p" android:horizontalGap="2%p" />
+        <Key android:codes="-202" android:keyLabel="Num 2" android:keyWidth="13%p" />
+        <Key android:codes="-203" android:keyLabel="Num 3" android:keyWidth="13%p" />
+        <Key android:codes="-214" android:keyLabel="Num +" android:keyWidth="15%p" android:keyEdgeFlags="right" />
+    </Row>
+
+    <!-- Row 5: ABC, All, Space, Down (↓) | Num 0, Num ., Num -, Num Enter -->
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:codes="-2" android:keyLabel="ABC" android:keyWidth="11%p" android:keyEdgeFlags="left" />
+        <Key android:codes="-101" android:keyLabel="All" android:keyWidth="11%p" />
+        <Key android:codes="32" android:keyLabel="Space" android:keyWidth="12%p" android:isRepeatable="true" />
+        <Key android:codes="-111" android:keyLabel="↓" android:keyWidth="10%p" android:isRepeatable="true" />
+
+        <Key android:codes="-200" android:keyLabel="Num 0" android:keyWidth="13%p" android:horizontalGap="2%p" />
+        <Key android:codes="-213" android:keyLabel="Num ." android:keyWidth="13%p" />
+        <Key android:codes="-212" android:keyLabel="Num -" android:keyWidth="13%p" />
+        <Key android:codes="-215" android:keyLabel="↵ Kirim" android:keyWidth="15%p" android:keyEdgeFlags="right" />
+    </Row>
+</Keyboard>

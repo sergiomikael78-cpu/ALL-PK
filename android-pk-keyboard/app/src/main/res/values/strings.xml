@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PK Keyboard Mobile</string>
+    <string name="keyboard_name">PK Keyboard (LiveChat CS)</string>
+    <string name="subtype_indonesian">Bahasa Indonesia (PK)</string>
+    <string name="subtype_english">English (PK)</string>
+</resources>

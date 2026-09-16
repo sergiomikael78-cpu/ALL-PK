@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PKKeyboard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cyber_cyan</item>
+        <item name="colorSecondary">@color/cyber_emerald</item>
+        <item name="android:statusBarColor">@color/bg_core</item>
+        <item name="android:navigationBarColor">@color/bg_core</item>
+        <item name="android:windowBackground">@color/bg_core</item>
+    </style>
+
+    <!-- Translucent Dialog Theme for Voice Permission & Recognition -->
+    <style name="Theme.PKKeyboard.Translucent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

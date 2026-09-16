@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_core">
+
+    <!-- Primary Embedded Web PK Matrix Vault (Hardware Accelerated) -->
+    <WebView
+        android:id="@+id/webview_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+    <!-- Floating Keyboard Setup Assistant Banner (Hanya muncul jika keyboard belum aktif) -->
+    <LinearLayout
+        android:id="@+id/banner_keyboard_setup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#141D33"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⚡ Keyboard PK belum aktif di HP Anda. Aktifkan agar pemicu 'cek/' bekerja di LiveChat."
+            android:textColor="@color/text_primary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_banner_activate"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/cyber_cyan"
+            android:text="Aktifkan"
+            android:textColor="@color/bg_core"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
